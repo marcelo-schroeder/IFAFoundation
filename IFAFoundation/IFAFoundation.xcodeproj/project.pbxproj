@@ -7,9 +7,41 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		F7156BEA1BE952FB0009EFF4 /* IFAFoundation.h in Headers */ = {isa = PBXBuildFile; fileRef = F7156BE91BE952FB0009EFF4 /* IFAFoundation.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		F7156BF11BE952FB0009EFF4 /* IFAFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F7156BE61BE952FB0009EFF4 /* IFAFoundation.framework */; };
 		F7156BF61BE952FB0009EFF4 /* IFAFoundationTests.m in Sources */ = {isa = PBXBuildFile; fileRef = F7156BF51BE952FB0009EFF4 /* IFAFoundationTests.m */; };
+		F7650B201BE9595700B97932 /* IFAFoundation.h in Headers */ = {isa = PBXBuildFile; fileRef = F7650AFF1BE9595700B97932 /* IFAFoundation.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		F7650B211BE9595700B97932 /* IFAAssertionUtils.h in Headers */ = {isa = PBXBuildFile; fileRef = F7650B001BE9595700B97932 /* IFAAssertionUtils.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		F7650B221BE9595700B97932 /* IFAAssertionUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = F7650B011BE9595700B97932 /* IFAAssertionUtils.m */; };
+		F7650B231BE9595700B97932 /* IFADateRange.h in Headers */ = {isa = PBXBuildFile; fileRef = F7650B021BE9595700B97932 /* IFADateRange.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		F7650B241BE9595700B97932 /* IFADateRange.m in Sources */ = {isa = PBXBuildFile; fileRef = F7650B031BE9595700B97932 /* IFADateRange.m */; };
+		F7650B251BE9595700B97932 /* IFADispatchQueueManager.h in Headers */ = {isa = PBXBuildFile; fileRef = F7650B041BE9595700B97932 /* IFADispatchQueueManager.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		F7650B261BE9595700B97932 /* IFADispatchQueueManager.m in Sources */ = {isa = PBXBuildFile; fileRef = F7650B051BE9595700B97932 /* IFADispatchQueueManager.m */; };
+		F7650B271BE9595700B97932 /* IFADynamicCache.h in Headers */ = {isa = PBXBuildFile; fileRef = F7650B061BE9595700B97932 /* IFADynamicCache.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		F7650B281BE9595700B97932 /* IFADynamicCache.m in Sources */ = {isa = PBXBuildFile; fileRef = F7650B071BE9595700B97932 /* IFADynamicCache.m */; };
+		F7650B291BE9595700B97932 /* IFAFoundationConstants.h in Headers */ = {isa = PBXBuildFile; fileRef = F7650B081BE9595700B97932 /* IFAFoundationConstants.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		F7650B2A1BE9595700B97932 /* IFAFoundationConstants.m in Sources */ = {isa = PBXBuildFile; fileRef = F7650B091BE9595700B97932 /* IFAFoundationConstants.m */; };
+		F7650B2B1BE9595700B97932 /* IFAPurgeableObject.h in Headers */ = {isa = PBXBuildFile; fileRef = F7650B0A1BE9595700B97932 /* IFAPurgeableObject.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		F7650B2C1BE9595700B97932 /* IFAPurgeableObject.m in Sources */ = {isa = PBXBuildFile; fileRef = F7650B0B1BE9595700B97932 /* IFAPurgeableObject.m */; };
+		F7650B2D1BE9595700B97932 /* IFAUtils.h in Headers */ = {isa = PBXBuildFile; fileRef = F7650B0C1BE9595700B97932 /* IFAUtils.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		F7650B2E1BE9595700B97932 /* IFAUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = F7650B0D1BE9595700B97932 /* IFAUtils.m */; };
+		F7650B2F1BE9595700B97932 /* IFAZeroingWeakReferenceContainer.h in Headers */ = {isa = PBXBuildFile; fileRef = F7650B0E1BE9595700B97932 /* IFAZeroingWeakReferenceContainer.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		F7650B301BE9595700B97932 /* IFAZeroingWeakReferenceContainer.m in Sources */ = {isa = PBXBuildFile; fileRef = F7650B0F1BE9595700B97932 /* IFAZeroingWeakReferenceContainer.m */; };
+		F7650B311BE9595700B97932 /* NSCalendar+IFAFoundation.h in Headers */ = {isa = PBXBuildFile; fileRef = F7650B101BE9595700B97932 /* NSCalendar+IFAFoundation.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		F7650B321BE9595700B97932 /* NSCalendar+IFAFoundation.m in Sources */ = {isa = PBXBuildFile; fileRef = F7650B111BE9595700B97932 /* NSCalendar+IFAFoundation.m */; };
+		F7650B331BE9595700B97932 /* NSData+IFAFoundation.h in Headers */ = {isa = PBXBuildFile; fileRef = F7650B121BE9595700B97932 /* NSData+IFAFoundation.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		F7650B341BE9595700B97932 /* NSData+IFAFoundation.m in Sources */ = {isa = PBXBuildFile; fileRef = F7650B131BE9595700B97932 /* NSData+IFAFoundation.m */; };
+		F7650B351BE9595700B97932 /* NSDate+IFAFoundation.h in Headers */ = {isa = PBXBuildFile; fileRef = F7650B141BE9595700B97932 /* NSDate+IFAFoundation.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		F7650B361BE9595700B97932 /* NSDate+IFAFoundation.m in Sources */ = {isa = PBXBuildFile; fileRef = F7650B151BE9595700B97932 /* NSDate+IFAFoundation.m */; };
+		F7650B371BE9595700B97932 /* NSDictionary+IFAFoundation.h in Headers */ = {isa = PBXBuildFile; fileRef = F7650B161BE9595700B97932 /* NSDictionary+IFAFoundation.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		F7650B381BE9595700B97932 /* NSDictionary+IFAFoundation.m in Sources */ = {isa = PBXBuildFile; fileRef = F7650B171BE9595700B97932 /* NSDictionary+IFAFoundation.m */; };
+		F7650B391BE9595700B97932 /* NSFileManager+IFAFoundation.h in Headers */ = {isa = PBXBuildFile; fileRef = F7650B181BE9595700B97932 /* NSFileManager+IFAFoundation.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		F7650B3A1BE9595700B97932 /* NSFileManager+IFAFoundation.m in Sources */ = {isa = PBXBuildFile; fileRef = F7650B191BE9595700B97932 /* NSFileManager+IFAFoundation.m */; };
+		F7650B3B1BE9595700B97932 /* NSNumberFormatter+IFAFoundation.h in Headers */ = {isa = PBXBuildFile; fileRef = F7650B1A1BE9595700B97932 /* NSNumberFormatter+IFAFoundation.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		F7650B3C1BE9595700B97932 /* NSNumberFormatter+IFAFoundation.m in Sources */ = {isa = PBXBuildFile; fileRef = F7650B1B1BE9595700B97932 /* NSNumberFormatter+IFAFoundation.m */; };
+		F7650B3D1BE9595700B97932 /* NSObject+IFAFoundation.h in Headers */ = {isa = PBXBuildFile; fileRef = F7650B1C1BE9595700B97932 /* NSObject+IFAFoundation.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		F7650B3E1BE9595700B97932 /* NSObject+IFAFoundation.m in Sources */ = {isa = PBXBuildFile; fileRef = F7650B1D1BE9595700B97932 /* NSObject+IFAFoundation.m */; };
+		F7650B3F1BE9595700B97932 /* NSString+IFAFoundation.h in Headers */ = {isa = PBXBuildFile; fileRef = F7650B1E1BE9595700B97932 /* NSString+IFAFoundation.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		F7650B401BE9595700B97932 /* NSString+IFAFoundation.m in Sources */ = {isa = PBXBuildFile; fileRef = F7650B1F1BE9595700B97932 /* NSString+IFAFoundation.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -24,11 +56,43 @@
 
 /* Begin PBXFileReference section */
 		F7156BE61BE952FB0009EFF4 /* IFAFoundation.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = IFAFoundation.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		F7156BE91BE952FB0009EFF4 /* IFAFoundation.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = IFAFoundation.h; sourceTree = "<group>"; };
 		F7156BEB1BE952FB0009EFF4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F7156BF01BE952FB0009EFF4 /* IFAFoundationTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = IFAFoundationTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		F7156BF51BE952FB0009EFF4 /* IFAFoundationTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = IFAFoundationTests.m; sourceTree = "<group>"; };
 		F7156BF71BE952FB0009EFF4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F7650AFF1BE9595700B97932 /* IFAFoundation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IFAFoundation.h; sourceTree = "<group>"; };
+		F7650B001BE9595700B97932 /* IFAAssertionUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IFAAssertionUtils.h; sourceTree = "<group>"; };
+		F7650B011BE9595700B97932 /* IFAAssertionUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IFAAssertionUtils.m; sourceTree = "<group>"; };
+		F7650B021BE9595700B97932 /* IFADateRange.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IFADateRange.h; sourceTree = "<group>"; };
+		F7650B031BE9595700B97932 /* IFADateRange.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IFADateRange.m; sourceTree = "<group>"; };
+		F7650B041BE9595700B97932 /* IFADispatchQueueManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IFADispatchQueueManager.h; sourceTree = "<group>"; };
+		F7650B051BE9595700B97932 /* IFADispatchQueueManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IFADispatchQueueManager.m; sourceTree = "<group>"; };
+		F7650B061BE9595700B97932 /* IFADynamicCache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IFADynamicCache.h; sourceTree = "<group>"; };
+		F7650B071BE9595700B97932 /* IFADynamicCache.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IFADynamicCache.m; sourceTree = "<group>"; };
+		F7650B081BE9595700B97932 /* IFAFoundationConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IFAFoundationConstants.h; sourceTree = "<group>"; };
+		F7650B091BE9595700B97932 /* IFAFoundationConstants.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IFAFoundationConstants.m; sourceTree = "<group>"; };
+		F7650B0A1BE9595700B97932 /* IFAPurgeableObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IFAPurgeableObject.h; sourceTree = "<group>"; };
+		F7650B0B1BE9595700B97932 /* IFAPurgeableObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IFAPurgeableObject.m; sourceTree = "<group>"; };
+		F7650B0C1BE9595700B97932 /* IFAUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IFAUtils.h; sourceTree = "<group>"; };
+		F7650B0D1BE9595700B97932 /* IFAUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IFAUtils.m; sourceTree = "<group>"; };
+		F7650B0E1BE9595700B97932 /* IFAZeroingWeakReferenceContainer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IFAZeroingWeakReferenceContainer.h; sourceTree = "<group>"; };
+		F7650B0F1BE9595700B97932 /* IFAZeroingWeakReferenceContainer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IFAZeroingWeakReferenceContainer.m; sourceTree = "<group>"; };
+		F7650B101BE9595700B97932 /* NSCalendar+IFAFoundation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSCalendar+IFAFoundation.h"; sourceTree = "<group>"; };
+		F7650B111BE9595700B97932 /* NSCalendar+IFAFoundation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSCalendar+IFAFoundation.m"; sourceTree = "<group>"; };
+		F7650B121BE9595700B97932 /* NSData+IFAFoundation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSData+IFAFoundation.h"; sourceTree = "<group>"; };
+		F7650B131BE9595700B97932 /* NSData+IFAFoundation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSData+IFAFoundation.m"; sourceTree = "<group>"; };
+		F7650B141BE9595700B97932 /* NSDate+IFAFoundation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDate+IFAFoundation.h"; sourceTree = "<group>"; };
+		F7650B151BE9595700B97932 /* NSDate+IFAFoundation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDate+IFAFoundation.m"; sourceTree = "<group>"; };
+		F7650B161BE9595700B97932 /* NSDictionary+IFAFoundation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDictionary+IFAFoundation.h"; sourceTree = "<group>"; };
+		F7650B171BE9595700B97932 /* NSDictionary+IFAFoundation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDictionary+IFAFoundation.m"; sourceTree = "<group>"; };
+		F7650B181BE9595700B97932 /* NSFileManager+IFAFoundation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSFileManager+IFAFoundation.h"; sourceTree = "<group>"; };
+		F7650B191BE9595700B97932 /* NSFileManager+IFAFoundation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSFileManager+IFAFoundation.m"; sourceTree = "<group>"; };
+		F7650B1A1BE9595700B97932 /* NSNumberFormatter+IFAFoundation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSNumberFormatter+IFAFoundation.h"; sourceTree = "<group>"; };
+		F7650B1B1BE9595700B97932 /* NSNumberFormatter+IFAFoundation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSNumberFormatter+IFAFoundation.m"; sourceTree = "<group>"; };
+		F7650B1C1BE9595700B97932 /* NSObject+IFAFoundation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+IFAFoundation.h"; sourceTree = "<group>"; };
+		F7650B1D1BE9595700B97932 /* NSObject+IFAFoundation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+IFAFoundation.m"; sourceTree = "<group>"; };
+		F7650B1E1BE9595700B97932 /* NSString+IFAFoundation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+IFAFoundation.h"; sourceTree = "<group>"; };
+		F7650B1F1BE9595700B97932 /* NSString+IFAFoundation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+IFAFoundation.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -71,7 +135,7 @@
 		F7156BE81BE952FB0009EFF4 /* IFAFoundation */ = {
 			isa = PBXGroup;
 			children = (
-				F7156BE91BE952FB0009EFF4 /* IFAFoundation.h */,
+				F7650AFE1BE9595700B97932 /* classes */,
 				F7156BEB1BE952FB0009EFF4 /* Info.plist */,
 			);
 			path = IFAFoundation;
@@ -86,6 +150,46 @@
 			path = IFAFoundationTests;
 			sourceTree = "<group>";
 		};
+		F7650AFE1BE9595700B97932 /* classes */ = {
+			isa = PBXGroup;
+			children = (
+				F7650AFF1BE9595700B97932 /* IFAFoundation.h */,
+				F7650B001BE9595700B97932 /* IFAAssertionUtils.h */,
+				F7650B011BE9595700B97932 /* IFAAssertionUtils.m */,
+				F7650B021BE9595700B97932 /* IFADateRange.h */,
+				F7650B031BE9595700B97932 /* IFADateRange.m */,
+				F7650B041BE9595700B97932 /* IFADispatchQueueManager.h */,
+				F7650B051BE9595700B97932 /* IFADispatchQueueManager.m */,
+				F7650B061BE9595700B97932 /* IFADynamicCache.h */,
+				F7650B071BE9595700B97932 /* IFADynamicCache.m */,
+				F7650B081BE9595700B97932 /* IFAFoundationConstants.h */,
+				F7650B091BE9595700B97932 /* IFAFoundationConstants.m */,
+				F7650B0A1BE9595700B97932 /* IFAPurgeableObject.h */,
+				F7650B0B1BE9595700B97932 /* IFAPurgeableObject.m */,
+				F7650B0C1BE9595700B97932 /* IFAUtils.h */,
+				F7650B0D1BE9595700B97932 /* IFAUtils.m */,
+				F7650B0E1BE9595700B97932 /* IFAZeroingWeakReferenceContainer.h */,
+				F7650B0F1BE9595700B97932 /* IFAZeroingWeakReferenceContainer.m */,
+				F7650B101BE9595700B97932 /* NSCalendar+IFAFoundation.h */,
+				F7650B111BE9595700B97932 /* NSCalendar+IFAFoundation.m */,
+				F7650B121BE9595700B97932 /* NSData+IFAFoundation.h */,
+				F7650B131BE9595700B97932 /* NSData+IFAFoundation.m */,
+				F7650B141BE9595700B97932 /* NSDate+IFAFoundation.h */,
+				F7650B151BE9595700B97932 /* NSDate+IFAFoundation.m */,
+				F7650B161BE9595700B97932 /* NSDictionary+IFAFoundation.h */,
+				F7650B171BE9595700B97932 /* NSDictionary+IFAFoundation.m */,
+				F7650B181BE9595700B97932 /* NSFileManager+IFAFoundation.h */,
+				F7650B191BE9595700B97932 /* NSFileManager+IFAFoundation.m */,
+				F7650B1A1BE9595700B97932 /* NSNumberFormatter+IFAFoundation.h */,
+				F7650B1B1BE9595700B97932 /* NSNumberFormatter+IFAFoundation.m */,
+				F7650B1C1BE9595700B97932 /* NSObject+IFAFoundation.h */,
+				F7650B1D1BE9595700B97932 /* NSObject+IFAFoundation.m */,
+				F7650B1E1BE9595700B97932 /* NSString+IFAFoundation.h */,
+				F7650B1F1BE9595700B97932 /* NSString+IFAFoundation.m */,
+			);
+			path = classes;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
@@ -93,7 +197,23 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F7156BEA1BE952FB0009EFF4 /* IFAFoundation.h in Headers */,
+				F7650B3F1BE9595700B97932 /* NSString+IFAFoundation.h in Headers */,
+				F7650B2B1BE9595700B97932 /* IFAPurgeableObject.h in Headers */,
+				F7650B371BE9595700B97932 /* NSDictionary+IFAFoundation.h in Headers */,
+				F7650B271BE9595700B97932 /* IFADynamicCache.h in Headers */,
+				F7650B291BE9595700B97932 /* IFAFoundationConstants.h in Headers */,
+				F7650B3D1BE9595700B97932 /* NSObject+IFAFoundation.h in Headers */,
+				F7650B3B1BE9595700B97932 /* NSNumberFormatter+IFAFoundation.h in Headers */,
+				F7650B211BE9595700B97932 /* IFAAssertionUtils.h in Headers */,
+				F7650B201BE9595700B97932 /* IFAFoundation.h in Headers */,
+				F7650B391BE9595700B97932 /* NSFileManager+IFAFoundation.h in Headers */,
+				F7650B311BE9595700B97932 /* NSCalendar+IFAFoundation.h in Headers */,
+				F7650B2D1BE9595700B97932 /* IFAUtils.h in Headers */,
+				F7650B231BE9595700B97932 /* IFADateRange.h in Headers */,
+				F7650B331BE9595700B97932 /* NSData+IFAFoundation.h in Headers */,
+				F7650B351BE9595700B97932 /* NSDate+IFAFoundation.h in Headers */,
+				F7650B2F1BE9595700B97932 /* IFAZeroingWeakReferenceContainer.h in Headers */,
+				F7650B251BE9595700B97932 /* IFADispatchQueueManager.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -193,6 +313,22 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F7650B241BE9595700B97932 /* IFADateRange.m in Sources */,
+				F7650B301BE9595700B97932 /* IFAZeroingWeakReferenceContainer.m in Sources */,
+				F7650B321BE9595700B97932 /* NSCalendar+IFAFoundation.m in Sources */,
+				F7650B2C1BE9595700B97932 /* IFAPurgeableObject.m in Sources */,
+				F7650B341BE9595700B97932 /* NSData+IFAFoundation.m in Sources */,
+				F7650B281BE9595700B97932 /* IFADynamicCache.m in Sources */,
+				F7650B261BE9595700B97932 /* IFADispatchQueueManager.m in Sources */,
+				F7650B3A1BE9595700B97932 /* NSFileManager+IFAFoundation.m in Sources */,
+				F7650B3E1BE9595700B97932 /* NSObject+IFAFoundation.m in Sources */,
+				F7650B221BE9595700B97932 /* IFAAssertionUtils.m in Sources */,
+				F7650B381BE9595700B97932 /* NSDictionary+IFAFoundation.m in Sources */,
+				F7650B3C1BE9595700B97932 /* NSNumberFormatter+IFAFoundation.m in Sources */,
+				F7650B361BE9595700B97932 /* NSDate+IFAFoundation.m in Sources */,
+				F7650B401BE9595700B97932 /* NSString+IFAFoundation.m in Sources */,
+				F7650B2A1BE9595700B97932 /* IFAFoundationConstants.m in Sources */,
+				F7650B2E1BE9595700B97932 /* IFAUtils.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -374,6 +510,7 @@
 				F7156BFC1BE952FB0009EFF4 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		F7156BFD1BE952FB0009EFF4 /* Build configuration list for PBXNativeTarget "IFAFoundationTests" */ = {
 			isa = XCConfigurationList;
@@ -382,6 +519,7 @@
 				F7156BFF1BE952FB0009EFF4 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
