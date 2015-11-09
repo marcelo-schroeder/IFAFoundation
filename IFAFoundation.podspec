@@ -1,7 +1,7 @@
 Pod::Spec.new do |s|
     s.name              = 'IFAFoundation'
     s.version           = '1.0.0'
-    s.summary           = 'A Cocoa Touch framework to help you develop high quality iOS apps and app extensions faster.'
+    s.summary           = 'Collection of enhancements on top of Cocoa Touch foundation frameworks for iOS apps and app extensions.'
     s.homepage          = 'https://github.com/marcelo-schroeder/IFAFoundation'
     s.license           = 'Apache-2.0'
     s.author            = { 'Marcelo Schroeder' => 'marcelo.schroeder@infoaccent.com' }
