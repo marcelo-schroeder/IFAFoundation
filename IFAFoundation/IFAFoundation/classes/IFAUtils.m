@@ -1,6 +1,6 @@
 //
 //  IFAUtils.m
-//  Gusty
+//  IFAFoundation
 //
 //  Created by Marcelo Schroeder on 14/08/09.
 //  Copyright 2009 InfoAccent Pty Limited. All rights reserved.
