@@ -49,6 +49,9 @@
     <content url="file://$MODULE_DIR$/IFAFoundation/IFAFoundation/Info.plist" />
     <content url="file://$MODULE_DIR$/IFAFoundation/IFAFoundation/classes" />
     <content url="file://$MODULE_DIR$/IFAFoundation/IFAFoundationTests" />
+    <content url="file://$MODULE_DIR$/LICENSE">
+      <sourceFolder url="file://$MODULE_DIR$/LICENSE" isTestSource="false" />
+    </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="module-library">

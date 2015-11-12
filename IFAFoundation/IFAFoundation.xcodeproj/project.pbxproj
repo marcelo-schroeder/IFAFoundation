@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		10738C84775FC70F681B3852 /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = 10738C50C5D62009136679FD /* LICENSE */; };
 		F7156BF11BE952FB0009EFF4 /* IFAFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F7156BE61BE952FB0009EFF4 /* IFAFoundation.framework */; };
 		F7156BF61BE952FB0009EFF4 /* IFAFoundationTests.m in Sources */ = {isa = PBXBuildFile; fileRef = F7156BF51BE952FB0009EFF4 /* IFAFoundationTests.m */; };
 		F7650B201BE9595700B97932 /* IFAFoundation.h in Headers */ = {isa = PBXBuildFile; fileRef = F7650AFF1BE9595700B97932 /* IFAFoundation.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -55,6 +56,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		10738C50C5D62009136679FD /* LICENSE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
 		F7156BE61BE952FB0009EFF4 /* IFAFoundation.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = IFAFoundation.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F7156BEB1BE952FB0009EFF4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F7156BF01BE952FB0009EFF4 /* IFAFoundationTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = IFAFoundationTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -122,6 +124,7 @@
 				F7156BE81BE952FB0009EFF4 /* IFAFoundation */,
 				F7156BF41BE952FB0009EFF4 /* IFAFoundationTests */,
 				F7156BE71BE952FB0009EFF4 /* Products */,
+				10738C50C5D62009136679FD /* LICENSE */,
 			);
 			sourceTree = "<group>";
 		};
@@ -298,6 +301,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				10738C84775FC70F681B3852 /* LICENSE in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
