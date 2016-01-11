@@ -96,6 +96,7 @@
 		F7650B1D1BE9595700B97932 /* NSObject+IFAFoundation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+IFAFoundation.m"; sourceTree = "<group>"; };
 		F7650B1E1BE9595700B97932 /* NSString+IFAFoundation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+IFAFoundation.h"; sourceTree = "<group>"; };
 		F7650B1F1BE9595700B97932 /* NSString+IFAFoundation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+IFAFoundation.m"; sourceTree = "<group>"; };
+		F7CD28301C44567F00F4C120 /* fastlane */ = {isa = PBXFileReference; lastKnownFileType = folder; name = fastlane; path = ../fastlane; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -125,6 +126,7 @@
 				F7156BF41BE952FB0009EFF4 /* IFAFoundationTests */,
 				F7156BE71BE952FB0009EFF4 /* Products */,
 				10738C50C5D62009136679FD /* LICENSE */,
+				F7CD28301C44567F00F4C120 /* fastlane */,
 			);
 			sourceTree = "<group>";
 		};
