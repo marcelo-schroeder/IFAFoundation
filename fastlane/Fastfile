@@ -1,1 +1,19 @@
 import_from_git(url: 'https://github.com/marcelo-schroeder/IFAFastfile.git')
+
+platform :ios do
+
+  desc "Release new version of open source framework"
+  desc "Optional parameter: versionNumber (if not provided, patch version number is incremented by 1)"
+  lane :releaseFramework do |options|
+    ensureGitBranch
+    #updateDependencies
+    #runAllTests
+    updateVersionNumber(options)
+    puts "hello"
+    sh "pwd"
+    puts "goodbye"
+    #commitNewFrameworkVersionRelease
+    #addVersionGitTag
+  end
+
+end
