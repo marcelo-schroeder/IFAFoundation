@@ -8,9 +8,9 @@ platform :ios do
     ensureGitBranch
     #updateDependencies
     #runAllTests
-    updateVersionNumber(options)
+    #updateVersionNumber(options)
     puts "hello"
-    sh "pwd"
+    sh "echo 'hello123'"
     puts "goodbye"
     #commitNewFrameworkVersionRelease
     #addVersionGitTag
