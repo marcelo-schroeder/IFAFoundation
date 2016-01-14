@@ -9,9 +9,7 @@ platform :ios do
     #updateDependencies
     #runAllTests
     #updateVersionNumber(options)
-    puts "hello"
-    sh "echo 'hello123'"
-    puts "goodbye"
+    sh "git add -A && git commit -m 'New version release'"
     #commitNewFrameworkVersionRelease
     #addVersionGitTag
   end
