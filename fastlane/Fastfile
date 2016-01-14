@@ -9,9 +9,12 @@ platform :ios do
     #updateDependencies
     #runAllTests
     updateVersionNumber(options)
+    commitNewFrameworkVersionRelease
+    addVersionGitTag
+  end
+
+  private_lane :commitNewFrameworkVersionRelease do
     sh "git add -A && git commit -m 'New version release'"
-    #commitNewFrameworkVersionRelease
-    #addVersionGitTag
   end
 
 end
