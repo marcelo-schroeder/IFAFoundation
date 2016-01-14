@@ -12,7 +12,7 @@ platform :ios do
     commitNewFrameworkVersionRelease
     addVersionGitTag
     pushToGitRemote
-    mergeIntoGitRemoteMasterBranch
+    gitMergeIntoRemoteMasterBranch
   end
 
   private_lane :commitNewFrameworkVersionRelease do
