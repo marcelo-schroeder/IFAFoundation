@@ -8,7 +8,7 @@ platform :ios do
     ensureGitBranch
     #updateDependencies
     #runAllTests
-    #updateVersionNumber(options)
+    updateVersionNumber(options)
     sh "git add -A && git commit -m 'New version release'"
     #commitNewFrameworkVersionRelease
     #addVersionGitTag
