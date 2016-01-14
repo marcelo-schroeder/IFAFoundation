@@ -11,6 +11,7 @@ platform :ios do
     updateVersionNumber(options)
     commitNewFrameworkVersionRelease
     addVersionGitTag
+    pushToGitRemote
   end
 
   private_lane :commitNewFrameworkVersionRelease do
