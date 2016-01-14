@@ -13,7 +13,7 @@ platform :ios do
     addVersionGitTag
     pushToGitRemote
     gitMergeIntoRemoteMasterBranch
-    pod_push
+    #pod_push
   end
 
   private_lane :commitNewFrameworkVersionRelease do
@@ -21,7 +21,7 @@ platform :ios do
   end
 
   private_lane :gitMergeIntoRemoteMasterBranch do
-    sh "git checkout master && git pull origin master && git merge development && git push origin master"
+    sh "git checkout master && git pull origin master && git merge #{ENV['IFA_GIT_BRANCH']} && git push origin master && git checkout #{ENV['IFA_GIT_BRANCH']}"
   end
 
 end
