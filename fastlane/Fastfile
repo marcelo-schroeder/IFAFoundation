@@ -26,8 +26,7 @@ platform :ios do
   end
 
   private_lane :podTrunkPush do
-    sh "cd .."
-    pod_push
+    sh "cd .. && pod trunk push --verbose"
   end
 
 end
