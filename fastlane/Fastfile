@@ -14,6 +14,7 @@ platform :ios do
     pushToGitRemote
     gitMergeIntoRemoteMasterBranch
     pod_push
+    gitHubRelease
   end
 
   private_lane :commitNewFrameworkVersionRelease do
@@ -25,8 +26,13 @@ platform :ios do
     sh "git checkout master && git pull origin master && git merge #{branchName} && git push origin master && git checkout #{branchName} && git pull origin #{branchName}"
   end
 
-  #private_lane :podTrunkPush do
-  #  sh "cd .. && pod trunk push --verbose"
-  #end
+  private_lane :gitHubRelease do
+    versionNumber = get_version_number(xcodeproj: ENV['IFA_XCODE_PROJECT'])
+    set_github_release(
+      repository_name: ENV['IFA_GITHUB_REPOSITORY'],
+      tag_name: "v#{versionNumber}",
+      description: File.read(ENV['IFA_CHANGELOG']),
+    )
+  end
 
 end
