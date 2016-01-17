@@ -14,8 +14,8 @@ platform :ios do
     #addVersionGitTag
     pushToGitRemote
     gitMergeIntoRemoteMasterBranch
-    pod_push
     gitHubRelease(options)
+    pod_push
   end
 
   private_lane :commitNewFrameworkVersionRelease do
