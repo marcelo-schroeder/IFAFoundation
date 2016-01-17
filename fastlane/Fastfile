@@ -34,6 +34,7 @@ platform :ios do
       repository_name: ENV['IFA_GITHUB_REPOSITORY'],
       tag_name: "v#{versionNumber}",
       description: File.read(ENV['IFA_CHANGELOG']),
+      name: "",
     )
   end
 
