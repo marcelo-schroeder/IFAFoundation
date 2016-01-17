@@ -11,7 +11,7 @@ platform :ios do
     #runAllTests
     updateVersionNumber(options)
     commitNewFrameworkVersionRelease
-    addVersionGitTag
+    #addVersionGitTag
     pushToGitRemote
     gitMergeIntoRemoteMasterBranch
     pod_push
