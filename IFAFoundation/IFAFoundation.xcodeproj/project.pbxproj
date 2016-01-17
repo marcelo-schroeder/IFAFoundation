@@ -57,6 +57,7 @@
 
 /* Begin PBXFileReference section */
 		10738C50C5D62009136679FD /* LICENSE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
+		F70DCCF31C4C273E0073028E /* ReleaseNotes.txt */ = {isa = PBXFileReference; lastKnownFileType = text; name = ReleaseNotes.txt; path = ../ReleaseNotes.txt; sourceTree = "<group>"; };
 		F7156BE61BE952FB0009EFF4 /* IFAFoundation.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = IFAFoundation.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F7156BEB1BE952FB0009EFF4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F7156BF01BE952FB0009EFF4 /* IFAFoundationTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = IFAFoundationTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -121,6 +122,7 @@
 		F7156BDC1BE952FB0009EFF4 = {
 			isa = PBXGroup;
 			children = (
+				F70DCCF31C4C273E0073028E /* ReleaseNotes.txt */,
 				F75C516F1BF1338B0003174D /* IFAFoundation.podspec */,
 				F7156BE81BE952FB0009EFF4 /* IFAFoundation */,
 				F7156BF41BE952FB0009EFF4 /* IFAFoundationTests */,

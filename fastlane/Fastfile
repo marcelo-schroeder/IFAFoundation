@@ -26,8 +26,8 @@ platform :ios do
   end
 
   private_lane :podTrunkPush do
-#    sh "pod trunk push"
-    sh "cd .. && pod lib lint"
+    sh "cd .."
+    pod_push
   end
 
 end
