@@ -38,6 +38,13 @@
 
 - (NSString *)ifa_stringWithNumbersOnly;
 
+/**
+ * Splits receiver into smaller components with provided maximum length.
+ * @param maximumLength Maximum length of resulting components.
+ * @return Array of components split from the receiver with the maximum length provided.
+ */
+- (NSArray <NSString *> *)ifa_splitWithMaximumLength:(NSUInteger)maximumLength;
+
 + (instancetype)ifa_stringWithFormat:(NSString *)a_format array:(NSArray*)a_arguments;
 
 @end

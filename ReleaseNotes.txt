@@ -1,1 +1,1 @@
-Testing release automation (same contents as previous release).
+- [NEW] Added method ifa_splitWithMaximumLength to NSString+IFAFoundation.

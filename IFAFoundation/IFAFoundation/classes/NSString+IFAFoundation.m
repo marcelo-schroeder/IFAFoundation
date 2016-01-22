@@ -112,4 +112,17 @@
     return [self ifa_stringMatchingSet:l_numbers];
 }
 
+- (NSArray <NSString *> *)ifa_splitWithMaximumLength:(NSUInteger)maximumLength {
+    NSString *pattern = [NSString stringWithFormat:@".{1,%@}", @(maximumLength)];
+    NSRegularExpression *regex = [NSRegularExpression regularExpressionWithPattern:pattern
+                                                                           options:0
+                                                                             error:nil];
+    NSArray *matches = [regex matchesInString:self options:0 range:NSMakeRange(0, [self length])];
+    NSMutableArray *result = [NSMutableArray array];
+    for (NSTextCheckingResult *match in matches) {
+        [result addObject: [self substringWithRange: match.range]];
+    }
+    return [result copy];
+}
+
 @end
