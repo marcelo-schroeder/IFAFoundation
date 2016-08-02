@@ -268,8 +268,12 @@
 + (BOOL)isRunningsTests {
     NSDictionary *environment = [[NSProcessInfo processInfo] environment];
     NSString *injectBundle = environment[@"XCInjectBundle"];
-    NSString *pathExtension = [injectBundle pathExtension];
-    return [pathExtension isEqualToString:@"octest"] || [pathExtension isEqualToString:@"xctest"];
+    if (injectBundle) {
+        NSString *pathExtension = [injectBundle pathExtension];
+        return [pathExtension isEqualToString:@"octest"] || [pathExtension isEqualToString:@"xctest"];
+    }else{  // Xcode 7.3 or greater
+        return environment[@"XCInjectBundleInto"] != nil;
+    }
 }
 
 @end
