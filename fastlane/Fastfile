@@ -4,13 +4,16 @@ import_from_git(url: 'https://github.com/marcelo-schroeder/IFAFastfile.git')
 
 platform :ios do
 
+    desc "Release new version of open source framework"
+    desc "Optional parameter: versionNumber (if not provided, patch version number is incremented by 1)"
     lane :bitriseGitHubRelease do
         mergeGitBranch(
             sourceBranch: 'development',
             targetBranch: 'release'
         )
         sh "git checkout development"
-        sh 'curl https://www.bitrise.io/app/78b2872bea12e632/build/start.json --data \'{"hook_info":{"type":"bitrise","api_token":"Wd0-mo_MhpLTZxejx7mlAw"},"build_params":{"branch":"release","workflow_id":"GitHubRelease","environments":[{"mapped_to":"VERSION_NUMBER","value":"","is_expand":true}]}}\''
+        versionNumber = options[:versionNumber]
+        sh 'curl https://www.bitrise.io/app/78b2872bea12e632/build/start.json --data \'{"hook_info":{"type":"bitrise","api_token":"Wd0-mo_MhpLTZxejx7mlAw"},"build_params":{"branch":"release","workflow_id":"GitHubRelease","environments":[{"mapped_to":"VERSION_NUMBER","value":"#{versionNumber}","is_expand":true}]}}\''
     end
 
     override_lane :updateDependencies do
