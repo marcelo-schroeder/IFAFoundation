@@ -1,2 +1,1 @@
-- [NEW] Added method ifa_splitWithMaximumLength to NSString+IFAFoundation.
-- [FIX] Fixed bug in [IFAUtils isRunningsTests] that caused test running detection to fail in some cases.
+No code changes. Testing automated release process.
