@@ -6,7 +6,7 @@ platform :ios do
 
     desc "Release new version of open source framework"
     desc "Optional parameter: versionNumber (if not provided, patch version number is incremented by 1)"
-    lane :bitriseGitHubRelease do
+    lane :bitriseGitHubRelease do |options|
         mergeGitBranch(
             sourceBranch: 'development',
             targetBranch: 'release'
