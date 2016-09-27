@@ -1,4 +1,4 @@
-platform :ios, '8.0'
+platform :ios, '9.0'
 workspace 'IFAFoundation'
 xcodeproj 'IFAFoundation/IFAFoundation.xcodeproj'
 link_with 'IFAFoundationTests'
