@@ -73,9 +73,6 @@
 
 + (NSString *)hardwareType;
 
-+ (NSString *)encodeForUrlByAddingPercentEscapesWithOriginalString:(NSString *)a_originalString;
-+ (NSString *)encodeForUrlByAddingPercentEscapesIncludingReservedCharactersWithOriginalString:(NSString *)a_originalString;
-
 /**
 * Determines whether this method is running in a test target or not.
 * returns YES if this method is running in a test target, otherwise NO.

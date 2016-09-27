@@ -253,18 +253,6 @@
     return l_hardwareType;
 }
 
-+ (NSString *)encodeForUrlByAddingPercentEscapesWithOriginalString:(NSString *)a_originalString {
-    NSString *l_encodedString = CFBridgingRelease(CFURLCreateStringByAddingPercentEscapes(kCFAllocatorDefault,
-            (__bridge CFStringRef)(a_originalString), NULL, CFSTR(""), kCFStringEncodingUTF8));
-    return l_encodedString;
-}
-
-+ (NSString *)encodeForUrlByAddingPercentEscapesIncludingReservedCharactersWithOriginalString:(NSString *)a_originalString {
-    NSString *l_encodedString = CFBridgingRelease(CFURLCreateStringByAddingPercentEscapes(kCFAllocatorDefault,
-            (__bridge CFStringRef)(a_originalString), NULL, CFSTR(":/?#[]@!$&'()*+,;="), kCFStringEncodingUTF8));
-    return l_encodedString;
-}
-
 + (BOOL)isRunningsTests {
     NSDictionary *environment = [[NSProcessInfo processInfo] environment];
     NSString *injectBundle = environment[@"XCInjectBundle"];
