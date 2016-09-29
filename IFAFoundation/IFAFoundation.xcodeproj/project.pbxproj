@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		10738C84775FC70F681B3852 /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = 10738C50C5D62009136679FD /* LICENSE */; };
-		8410C1DF4C4691E0B596DCB5 /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 83391F9504CC1AA0D78DB81E /* Pods.framework */; };
+		336FA09902344B05A0B5676B /* Pods_IFAFoundationTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7C1045E48743E41A2C6733B4 /* Pods_IFAFoundationTests.framework */; };
 		F7156BF11BE952FB0009EFF4 /* IFAFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F7156BE61BE952FB0009EFF4 /* IFAFoundation.framework */; };
 		F7650B201BE9595700B97932 /* IFAFoundation.h in Headers */ = {isa = PBXBuildFile; fileRef = F7650AFF1BE9595700B97932 /* IFAFoundation.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		F7650B211BE9595700B97932 /* IFAAssertionUtils.h in Headers */ = {isa = PBXBuildFile; fileRef = F7650B001BE9595700B97932 /* IFAAssertionUtils.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -59,9 +59,9 @@
 /* Begin PBXFileReference section */
 		1073849B78BF951ED2792918 /* NSStringTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NSStringTests.m; sourceTree = "<group>"; };
 		10738C50C5D62009136679FD /* LICENSE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
-		83391F9504CC1AA0D78DB81E /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		C8E93C6309A27CA7AD29940C /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "../Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
-		E32F82416C47293DD396AC8C /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "../Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
+		6AD29AE985AF392E93274712 /* Pods-IFAFoundationTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-IFAFoundationTests.release.xcconfig"; path = "../Pods/Target Support Files/Pods-IFAFoundationTests/Pods-IFAFoundationTests.release.xcconfig"; sourceTree = "<group>"; };
+		7C1045E48743E41A2C6733B4 /* Pods_IFAFoundationTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_IFAFoundationTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		C38A801B6DD055456ADEB02A /* Pods-IFAFoundationTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-IFAFoundationTests.debug.xcconfig"; path = "../Pods/Target Support Files/Pods-IFAFoundationTests/Pods-IFAFoundationTests.debug.xcconfig"; sourceTree = "<group>"; };
 		F70DCCF31C4C273E0073028E /* ReleaseNotes.txt */ = {isa = PBXFileReference; lastKnownFileType = text; name = ReleaseNotes.txt; path = ../ReleaseNotes.txt; sourceTree = "<group>"; };
 		F7156BE61BE952FB0009EFF4 /* IFAFoundation.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = IFAFoundation.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F7156BEB1BE952FB0009EFF4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -117,7 +117,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F7156BF11BE952FB0009EFF4 /* IFAFoundation.framework in Frameworks */,
-				8410C1DF4C4691E0B596DCB5 /* Pods.framework in Frameworks */,
+				336FA09902344B05A0B5676B /* Pods_IFAFoundationTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -127,7 +127,7 @@
 		59EF07362C5B267B4F6B581C /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				83391F9504CC1AA0D78DB81E /* Pods.framework */,
+				7C1045E48743E41A2C6733B4 /* Pods_IFAFoundationTests.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -217,8 +217,8 @@
 		FA6EAA4FAE71442E42B2D52C /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				E32F82416C47293DD396AC8C /* Pods.debug.xcconfig */,
-				C8E93C6309A27CA7AD29940C /* Pods.release.xcconfig */,
+				C38A801B6DD055456ADEB02A /* Pods-IFAFoundationTests.debug.xcconfig */,
+				6AD29AE985AF392E93274712 /* Pods-IFAFoundationTests.release.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
@@ -275,12 +275,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = F7156BFD1BE952FB0009EFF4 /* Build configuration list for PBXNativeTarget "IFAFoundationTests" */;
 			buildPhases = (
-				56C790D93EF9EE26F7FC5E1F /* Check Pods Manifest.lock */,
+				56C790D93EF9EE26F7FC5E1F /* [CP] Check Pods Manifest.lock */,
 				F7156BEC1BE952FB0009EFF4 /* Sources */,
 				F7156BED1BE952FB0009EFF4 /* Frameworks */,
 				F7156BEE1BE952FB0009EFF4 /* Resources */,
-				29E0FAE09E95033F717EC697 /* Embed Pods Frameworks */,
-				6BC6DB82CE61D1018DD1F55A /* Copy Pods Resources */,
+				29E0FAE09E95033F717EC697 /* [CP] Embed Pods Frameworks */,
+				6BC6DB82CE61D1018DD1F55A /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -346,29 +346,29 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		29E0FAE09E95033F717EC697 /* Embed Pods Frameworks */ = {
+		29E0FAE09E95033F717EC697 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "Embed Pods Frameworks";
+			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/../Pods/Target Support Files/Pods/Pods-frameworks.sh\"\n";
+			shellScript = "\"${SRCROOT}/../Pods/Target Support Files/Pods-IFAFoundationTests/Pods-IFAFoundationTests-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		56C790D93EF9EE26F7FC5E1F /* Check Pods Manifest.lock */ = {
+		56C790D93EF9EE26F7FC5E1F /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "Check Pods Manifest.lock";
+			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -376,19 +376,19 @@
 			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
-		6BC6DB82CE61D1018DD1F55A /* Copy Pods Resources */ = {
+		6BC6DB82CE61D1018DD1F55A /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "Copy Pods Resources";
+			name = "[CP] Copy Pods Resources";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/../Pods/Target Support Files/Pods/Pods-resources.sh\"\n";
+			shellScript = "\"${SRCROOT}/../Pods/Target Support Files/Pods-IFAFoundationTests/Pods-IFAFoundationTests-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -569,7 +569,7 @@
 		};
 		F7156BFE1BE952FB0009EFF4 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = E32F82416C47293DD396AC8C /* Pods.debug.xcconfig */;
+			baseConfigurationReference = C38A801B6DD055456ADEB02A /* Pods-IFAFoundationTests.debug.xcconfig */;
 			buildSettings = {
 				INFOPLIST_FILE = IFAFoundationTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
@@ -580,7 +580,7 @@
 		};
 		F7156BFF1BE952FB0009EFF4 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = C8E93C6309A27CA7AD29940C /* Pods.release.xcconfig */;
+			baseConfigurationReference = 6AD29AE985AF392E93274712 /* Pods-IFAFoundationTests.release.xcconfig */;
 			buildSettings = {
 				INFOPLIST_FILE = IFAFoundationTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";

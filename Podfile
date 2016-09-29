@@ -1,6 +1,6 @@
 platform :ios, '8.0'
 workspace 'IFAFoundation'
-xcodeproj 'IFAFoundation/IFAFoundation.xcodeproj'
+project 'IFAFoundation/IFAFoundation.xcodeproj'
 target 'IFAFoundationTests'
 use_frameworks!
 
