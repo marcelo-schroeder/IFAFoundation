@@ -1,7 +1,7 @@
 platform :ios, '8.0'
 workspace 'IFAFoundation'
 xcodeproj 'IFAFoundation/IFAFoundation.xcodeproj'
-link_with 'IFAFoundationTests'
+target 'IFAFoundationTests'
 use_frameworks!
 
 # Tests dependencies
