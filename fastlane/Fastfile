@@ -21,7 +21,9 @@ platform :ios do
     end
 
     override_lane :updateDependencies do
-        cocoapods
+        cocoapods(
+                repo_update: true
+        )
     end
 
 end
