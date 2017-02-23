@@ -1,1 +1,1 @@
-iOS 10 update.
+[CHANGE] .gitignore updated.
