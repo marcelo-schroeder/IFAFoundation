@@ -1,1 +1,1 @@
-[CHANGE] .gitignore updated.
+[NEW] Added IFADuplication.swift.
