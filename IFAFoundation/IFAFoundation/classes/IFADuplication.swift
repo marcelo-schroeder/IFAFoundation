@@ -13,7 +13,7 @@ import Foundation
     
     //MARK: Public
 
-    public static func name(forDuplicateOf duplicateSource: IFADuplication, existingItems: Array<IFADuplication>) -> String? {
+    public static func name(forDuplicateOf duplicateSource: IFADuplication, inItems items: Array<IFADuplication>) -> String? {
         guard let duplicateSourceName = duplicateSource.name else {
             return nil
         }
@@ -24,7 +24,7 @@ import Foundation
         } else {
             firstHalf = duplicateSourceName
         }
-        let nextCopySequence = highestCopySequence(inItems: existingItems) + 1
+        let nextCopySequence = highestCopySequence(forDuplicateOf: duplicateSource, inItems: items) + 1
         let secondHalf = nextCopySequence == 1 ? " Copy" : " Copy \(nextCopySequence)"
         return "\(firstHalf)\(secondHalf)"
     }
@@ -35,7 +35,7 @@ import Foundation
         
     }
     
-    static func highestCopySequence(inItems items: Array<IFADuplication>) -> Int {
+    static func highestCopySequence(forDuplicateOf duplicateSource: IFADuplication, inItems items: Array<IFADuplication>) -> Int {
         var highestCopySequence = 0
         for item in items {
             guard let significantDuplicationRegexGroup = significantDuplicationRegexGroup(forName: item.name) else {
@@ -75,7 +75,7 @@ import Foundation
 
     static func regexMatchStrings(forInputString inputString: String) -> [String] {
 
-//        print("regexMatchStrings forInputString: \(inputString)")
+        print("regexMatchStrings forInputString: \(inputString)")
 
         let pattern = "^(.*)( (Copy( (\\d+))?))$"
         let regex = try! NSRegularExpression(pattern: pattern, options: [])
@@ -88,10 +88,10 @@ import Foundation
                 guard range.length > 0 else {
                     continue
                 }
-//                print("  range.location: \(range.location), length: \(range.length)")
+                print("  range.location: \(range.location), length: \(range.length)")
                 let r = inputString.index(inputString.startIndex, offsetBy: range.location)..<inputString.index(inputString.startIndex, offsetBy: range.location+range.length)
                 let s = inputString.substring(with: r)
-//                print("    s: \(s)")
+                print("    s: \(s)")
                 matchStrings.append(s)
             }
         }
