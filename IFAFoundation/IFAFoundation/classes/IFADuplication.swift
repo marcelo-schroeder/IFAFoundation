@@ -75,7 +75,7 @@ import Foundation
 
     static func regexMatchStrings(forInputString inputString: String) -> [String] {
 
-        print("regexMatchStrings forInputString: \(inputString)")
+//        print("regexMatchStrings forInputString: \(inputString)")
 
         let pattern = "^(.*)( (Copy( (\\d+))?))$"
         let regex = try! NSRegularExpression(pattern: pattern, options: [])
@@ -88,10 +88,10 @@ import Foundation
                 guard range.length > 0 else {
                     continue
                 }
-                print("  range.location: \(range.location), length: \(range.length)")
+//                print("  range.location: \(range.location), length: \(range.length)")
                 let r = inputString.index(inputString.startIndex, offsetBy: range.location)..<inputString.index(inputString.startIndex, offsetBy: range.location+range.length)
                 let s = inputString.substring(with: r)
-                print("    s: \(s)")
+//                print("    s: \(s)")
                 matchStrings.append(s)
             }
         }
