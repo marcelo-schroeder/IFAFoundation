@@ -78,6 +78,14 @@ class IFADuplicationTests: XCTestCase {
             IFADuplicationTestClass("Test Copy 23"),
             ]), "Test Copy 24")
         
+        XCTAssertEqual(IFADuplicationUtils.name(forDuplicateOf: IFADuplicationTestClass("Test"), existingItems: [
+            IFADuplicationTestClass("Test"),
+            IFADuplicationTestClass("Test Copy"),
+            IFADuplicationTestClass("Test Copy 2"),
+            IFADuplicationTestClass("Test Copy 23"),
+            IFADuplicationTestClass("Report Copy 45 Copy 23"),
+            ]), "Test Copy 24")
+        
     }
 
 }
