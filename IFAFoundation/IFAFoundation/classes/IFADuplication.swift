@@ -14,7 +14,11 @@ import Foundation
     //MARK: Public
 
     public static func name(forDuplicateOf duplicateSource: IFADuplication, existingItems: Array<IFADuplication>) -> String? {
-        return "Test Copy 1"
+        guard let duplicateSourceName = duplicateSource.name else {
+            return nil
+        }
+        let nextCopySequence = highestCopySequence(inItems: existingItems) + 1
+        return "\(duplicateSourceName) Copy \(nextCopySequence)"
     }
     
     //MARK: Private
