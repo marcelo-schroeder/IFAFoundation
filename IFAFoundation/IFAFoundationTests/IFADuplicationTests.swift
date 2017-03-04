@@ -19,7 +19,7 @@ class IFADuplicationTests: XCTestCase {
         let result = IFADuplicationUtils.name(forDuplicateOf: duplicateSource, existingItems: existingItems)
 
         // Then
-        XCTAssertEqual(result, "Test Copy 1", "")
+        XCTAssertEqual(result, "Test Copy", "")
 
     }
     

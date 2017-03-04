@@ -17,8 +17,16 @@ import Foundation
         guard let duplicateSourceName = duplicateSource.name else {
             return nil
         }
+        let firstHalf: String
+        let regexMatchStrings = self.regexMatchStrings(forInputString: duplicateSourceName)
+        if regexMatchStrings.count >= 1 {
+            firstHalf = regexMatchStrings[1]
+        } else {
+            firstHalf = duplicateSourceName
+        }
         let nextCopySequence = highestCopySequence(inItems: existingItems) + 1
-        return "\(duplicateSourceName) Copy \(nextCopySequence)"
+        let secondHalf = nextCopySequence == 1 ? " Copy" : " Copy \(nextCopySequence)"
+        return "\(firstHalf)\(secondHalf)"
     }
     
     //MARK: Private
@@ -52,17 +60,28 @@ import Foundation
 
     static func significantDuplicationRegexGroup(forName name: String?) -> String? {
         
-        print("significantDuplicationRegexGroup forName: \(name)")
-        
         guard let name = name else {
             return nil
         }
-        
-        let pattern = "^.* (Copy( (\\d+))?)$"
-        let regex = try! NSRegularExpression(pattern: pattern, options: [])
-        let matches = regex.matches(in: name, options: [], range: NSRange(location: 0, length: name.characters.count))
-        
+
         var significantRegexGroup: String?
+        for matchString in regexMatchStrings(forInputString: name) {
+            significantRegexGroup = matchString
+        }
+        
+        return significantRegexGroup
+        
+    }
+
+    static func regexMatchStrings(forInputString inputString: String) -> [String] {
+
+        print("regexMatchStrings forInputString: \(inputString)")
+
+        let pattern = "^(.*)( (Copy( (\\d+))?))$"
+        let regex = try! NSRegularExpression(pattern: pattern, options: [])
+        let matches = regex.matches(in: inputString, options: [], range: NSRange(location: 0, length: inputString.characters.count))
+
+        var matchStrings: [String] = []
         for match in matches {
             for i in 0..<match.numberOfRanges {
                 let range = match.rangeAt(i)
@@ -70,15 +89,15 @@ import Foundation
                     continue
                 }
                 print("  range.location: \(range.location), length: \(range.length)")
-                let r = name.index(name.startIndex, offsetBy: range.location)..<name.index(name.startIndex, offsetBy: range.location+range.length)
-                let s = name.substring(with: r)
+                let r = inputString.index(inputString.startIndex, offsetBy: range.location)..<inputString.index(inputString.startIndex, offsetBy: range.location+range.length)
+                let s = inputString.substring(with: r)
                 print("    s: \(s)")
-                significantRegexGroup = s
+                matchStrings.append(s)
             }
         }
-        
-        return significantRegexGroup
-        
+
+        return matchStrings
+
     }
 
 }
