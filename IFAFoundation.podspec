@@ -8,5 +8,5 @@ Pod::Spec.new do |s|
     s.platform          = :ios, '8.0'
     s.requires_arc      = true
     s.source            = { :git => 'https://github.com/marcelo-schroeder/IFAFoundation.git', :tag => 'v' +  s.version.to_s }
-    s.source_files      = 'IFAFoundation/IFAFoundation/classes/**/*.{h,m}'
+    s.source_files      = 'IFAFoundation/IFAFoundation/classes/**/*.{h,m,swift}'
 end
