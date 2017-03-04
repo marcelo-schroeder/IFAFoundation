@@ -24,7 +24,7 @@ import Foundation
         } else {
             firstHalf = duplicateSourceName
         }
-        let nextCopySequence = highestCopySequence(forDuplicateOf: duplicateSource, inItems: items) + 1
+        let nextCopySequence = highestCopySequence(forDuplicateOf: duplicateSource, inItems: items)! + 1
         let secondHalf = nextCopySequence == 1 ? " Copy" : " Copy \(nextCopySequence)"
         return "\(firstHalf)\(secondHalf)"
     }
@@ -35,10 +35,33 @@ import Foundation
         
     }
     
-    static func highestCopySequence(forDuplicateOf duplicateSource: IFADuplication, inItems items: Array<IFADuplication>) -> Int {
+    static func highestCopySequence(forDuplicateOf duplicateSource: IFADuplication, inItems items: Array<IFADuplication>) -> Int? {
+        guard let duplicateSourceName = duplicateSource.name else {
+            return nil
+        }
+        let duplicateSourceRegexMatchStrings = regexMatchStrings(forInputString: duplicateSourceName)
+        let duplicateSourceBaseName: String
+        if duplicateSourceRegexMatchStrings.count == 0 {
+            duplicateSourceBaseName = duplicateSourceName
+        } else {
+            duplicateSourceBaseName = duplicateSourceRegexMatchStrings[1]
+        }
         var highestCopySequence = 0
         for item in items {
-            guard let significantDuplicationRegexGroup = significantDuplicationRegexGroup(forName: item.name) else {
+            guard let itemName = item.name else {
+                continue
+            }
+            let itemRegexMatchStrings = regexMatchStrings(forInputString: itemName)
+            let itemBaseName: String
+            if itemRegexMatchStrings.count == 0 {
+                itemBaseName = itemName
+            } else {
+                itemBaseName = itemRegexMatchStrings[1]
+            }
+            guard duplicateSourceBaseName == itemBaseName else {
+                continue
+            }
+            guard let significantDuplicationRegexGroup = significantDuplicationRegexGroup(forName: itemName) else {
                 continue
             }
             let copySequence: Int

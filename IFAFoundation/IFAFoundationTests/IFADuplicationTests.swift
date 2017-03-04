@@ -29,6 +29,16 @@ class IFADuplicationTests: XCTestCase {
         XCTAssertEqual(IFADuplicationUtils.highestCopySequence(forDuplicateOf: IFADuplicationTestClass("Test"), inItems: [
             IFADuplicationTestClass("Test"),
             ]), 0)
+        
+        XCTAssertEqual(IFADuplicationUtils.highestCopySequence(forDuplicateOf: IFADuplicationTestClass("Test"), inItems: [
+            IFADuplicationTestClass("Test"),
+            IFADuplicationTestClass("Test "),
+            ]), 0)
+        
+        XCTAssertEqual(IFADuplicationUtils.highestCopySequence(forDuplicateOf: IFADuplicationTestClass("Test"), inItems: [
+            IFADuplicationTestClass("Test"),
+            IFADuplicationTestClass("Unrelated Copy"),
+            ]), 0)
 
         XCTAssertEqual(IFADuplicationUtils.highestCopySequence(forDuplicateOf: IFADuplicationTestClass("Test"), inItems: [
             IFADuplicationTestClass("Test Copy"),
@@ -36,20 +46,20 @@ class IFADuplicationTests: XCTestCase {
         
         XCTAssertEqual(IFADuplicationUtils.highestCopySequence(forDuplicateOf: IFADuplicationTestClass("Test"), inItems: [
             IFADuplicationTestClass("Test Copy"),
-//            IFADuplicationTestClass("Unrelated Copy 99"),
+            IFADuplicationTestClass("Unrelated Copy 99"),
             ]), 1)
         
         XCTAssertEqual(IFADuplicationUtils.highestCopySequence(forDuplicateOf: IFADuplicationTestClass("Test"), inItems: [
             IFADuplicationTestClass("Test"),
             IFADuplicationTestClass("Test Copy"),
-//            IFADuplicationTestClass("Unrelated Copy 99"),
+            IFADuplicationTestClass("Unrelated Copy 99"),
             ]), 1)
         
         XCTAssertEqual(IFADuplicationUtils.highestCopySequence(forDuplicateOf: IFADuplicationTestClass("Test"), inItems: [
             IFADuplicationTestClass("Test"),
             IFADuplicationTestClass("Test Copy"),
             IFADuplicationTestClass("Test Copy 2"),
-//            IFADuplicationTestClass("Unrelated Copy 99"),
+            IFADuplicationTestClass("Unrelated Copy 99"),
             ]), 2)
         
         XCTAssertEqual(IFADuplicationUtils.highestCopySequence(forDuplicateOf: IFADuplicationTestClass("Test"), inItems: [
@@ -57,8 +67,15 @@ class IFADuplicationTests: XCTestCase {
             IFADuplicationTestClass("Test Copy"),
             IFADuplicationTestClass("Test Copy 2"),
             IFADuplicationTestClass("Test Copy 23"),
-//            IFADuplicationTestClass("Unrelated Copy 99"),
+            IFADuplicationTestClass("Test Copy 1 Copy 2 Copy 3"),
+            IFADuplicationTestClass("Unrelated Copy 99"),
             ]), 23)
+        
+        XCTAssertEqual(IFADuplicationUtils.highestCopySequence(forDuplicateOf: IFADuplicationTestClass("Test Copy 1 Copy 2"), inItems: [
+            IFADuplicationTestClass("Test Copy 1 Copy 2"),
+            IFADuplicationTestClass("Test Copy 1 Copy 4"),
+            IFADuplicationTestClass("Test Copy 7 Copy 8 Copy 9"),
+            ]), 4)
 
     }
     
@@ -70,13 +87,34 @@ class IFADuplicationTests: XCTestCase {
         
         XCTAssertEqual(IFADuplicationUtils.name(forDuplicateOf: IFADuplicationTestClass("Test"), inItems: [
             IFADuplicationTestClass("Test"),
+            IFADuplicationTestClass("Test "),
+            ]), "Test Copy")
+        
+        XCTAssertEqual(IFADuplicationUtils.name(forDuplicateOf: IFADuplicationTestClass("Test"), inItems: [
+            IFADuplicationTestClass("Test"),
+            IFADuplicationTestClass("Unrelated Copy"),
+            ]), "Test Copy")
+        
+        XCTAssertEqual(IFADuplicationUtils.name(forDuplicateOf: IFADuplicationTestClass("Test"), inItems: [
             IFADuplicationTestClass("Test Copy"),
+            ]), "Test Copy 2")
+        
+        XCTAssertEqual(IFADuplicationUtils.name(forDuplicateOf: IFADuplicationTestClass("Test"), inItems: [
+            IFADuplicationTestClass("Test Copy"),
+            IFADuplicationTestClass("Unrelated Copy 99"),
+            ]), "Test Copy 2")
+        
+        XCTAssertEqual(IFADuplicationUtils.name(forDuplicateOf: IFADuplicationTestClass("Test"), inItems: [
+            IFADuplicationTestClass("Test"),
+            IFADuplicationTestClass("Test Copy"),
+            IFADuplicationTestClass("Unrelated Copy 99"),
             ]), "Test Copy 2")
         
         XCTAssertEqual(IFADuplicationUtils.name(forDuplicateOf: IFADuplicationTestClass("Test"), inItems: [
             IFADuplicationTestClass("Test"),
             IFADuplicationTestClass("Test Copy"),
             IFADuplicationTestClass("Test Copy 2"),
+            IFADuplicationTestClass("Unrelated Copy 99"),
             ]), "Test Copy 3")
         
         XCTAssertEqual(IFADuplicationUtils.name(forDuplicateOf: IFADuplicationTestClass("Test"), inItems: [
@@ -84,15 +122,15 @@ class IFADuplicationTests: XCTestCase {
             IFADuplicationTestClass("Test Copy"),
             IFADuplicationTestClass("Test Copy 2"),
             IFADuplicationTestClass("Test Copy 23"),
+            IFADuplicationTestClass("Test Copy 1 Copy 2 Copy 3"),
+            IFADuplicationTestClass("Unrelated Copy 99"),
             ]), "Test Copy 24")
         
-        XCTAssertEqual(IFADuplicationUtils.name(forDuplicateOf: IFADuplicationTestClass("Test"), inItems: [
-            IFADuplicationTestClass("Test"),
-            IFADuplicationTestClass("Test Copy"),
-            IFADuplicationTestClass("Test Copy 2"),
-            IFADuplicationTestClass("Test Copy 23"),
-//            IFADuplicationTestClass("Unrelated Copy 56 Copy 34"),
-            ]), "Test Copy 24")
+        XCTAssertEqual(IFADuplicationUtils.name(forDuplicateOf: IFADuplicationTestClass("Test Copy 1 Copy 2"), inItems: [
+            IFADuplicationTestClass("Test Copy 1 Copy 2"),
+            IFADuplicationTestClass("Test Copy 1 Copy 4"),
+            IFADuplicationTestClass("Test Copy 7 Copy 8 Copy 9"),
+            ]), "Test Copy 1 Copy 5")
         
     }
 
