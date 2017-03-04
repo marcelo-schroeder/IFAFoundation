@@ -33,6 +33,38 @@ class IFADuplicationTests: XCTestCase {
         XCTAssertEqual(IFADuplicationUtils.significantDuplicationRegexGroup(forName: "Report Copy 12 Copy 23"), "23")
         XCTAssertEqual(IFADuplicationUtils.significantDuplicationRegexGroup(forName: nil), nil)
     }
+    
+    func testHighestCopySequence() {
+
+        XCTAssertEqual(IFADuplicationUtils.highestCopySequence(inItems: []), 0)
+    
+        XCTAssertEqual(IFADuplicationUtils.highestCopySequence(inItems: [
+            IFADuplicationTestClass("Test"),
+            ]), 0)
+
+        XCTAssertEqual(IFADuplicationUtils.highestCopySequence(inItems: [
+            IFADuplicationTestClass("Test Copy"),
+            ]), 1)
+        
+        XCTAssertEqual(IFADuplicationUtils.highestCopySequence(inItems: [
+            IFADuplicationTestClass("Test"),
+            IFADuplicationTestClass("Test Copy"),
+            ]), 1)
+        
+        XCTAssertEqual(IFADuplicationUtils.highestCopySequence(inItems: [
+            IFADuplicationTestClass("Test"),
+            IFADuplicationTestClass("Test Copy"),
+            IFADuplicationTestClass("Test Copy 2"),
+            ]), 2)
+        
+        XCTAssertEqual(IFADuplicationUtils.highestCopySequence(inItems: [
+            IFADuplicationTestClass("Test"),
+            IFADuplicationTestClass("Test Copy"),
+            IFADuplicationTestClass("Test Copy 2"),
+            IFADuplicationTestClass("Test Copy 23"),
+            ]), 23)
+
+    }
 
 }
 

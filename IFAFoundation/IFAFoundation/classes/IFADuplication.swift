@@ -23,6 +23,25 @@ import Foundation
         
     }
     
+    static func highestCopySequence(inItems items: Array<IFADuplication>) -> Int {
+        var highestCopySequence = 0
+        for item in items {
+            guard let significantDuplicationRegexGroup = significantDuplicationRegexGroup(forName: item.name) else {
+                continue
+            }
+            let copySequence: Int
+            if significantDuplicationRegexGroup == "Copy" {
+                copySequence = 1
+            } else {
+                copySequence = Int(significantDuplicationRegexGroup)!
+            }
+            if copySequence > highestCopySequence {
+                highestCopySequence = copySequence
+            }
+        }
+        return highestCopySequence
+    }
+    
     static func significantDuplicationRegexGroup(forItem item: IFADuplication) -> String? {
         return significantDuplicationRegexGroup(forName: item.name)
     }
