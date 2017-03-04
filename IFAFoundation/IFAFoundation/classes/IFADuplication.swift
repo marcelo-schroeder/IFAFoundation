@@ -22,10 +22,18 @@ import Foundation
     override private init() {
         
     }
+    
+    static func significantDuplicationRegexGroup(forItem item: IFADuplication) -> String? {
+        return significantDuplicationRegexGroup(forName: item.name)
+    }
 
-    static func significantDuplicationRegexGroup(forName name: String) -> String? {
+    static func significantDuplicationRegexGroup(forName name: String?) -> String? {
         
         print("significantDuplicationRegexGroup forName: \(name)")
+        
+        guard let name = name else {
+            return nil
+        }
         
         let pattern = "^.* (Copy( (\\d+))?)$"
         let regex = try! NSRegularExpression(pattern: pattern, options: [])

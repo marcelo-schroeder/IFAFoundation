@@ -31,6 +31,7 @@ class IFADuplicationTests: XCTestCase {
         XCTAssertEqual(IFADuplicationUtils.significantDuplicationRegexGroup(forName: "Copy Report"), nil)
         XCTAssertEqual(IFADuplicationUtils.significantDuplicationRegexGroup(forName: "Copy 23 Report"), nil)
         XCTAssertEqual(IFADuplicationUtils.significantDuplicationRegexGroup(forName: "Report Copy 12 Copy 23"), "23")
+        XCTAssertEqual(IFADuplicationUtils.significantDuplicationRegexGroup(forName: nil), nil)
     }
 
 }
