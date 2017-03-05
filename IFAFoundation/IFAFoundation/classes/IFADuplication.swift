@@ -6,7 +6,7 @@
 import Foundation
 
 @objc public protocol IFADuplication {
-    var name: String? { get }
+    var uniqueNameForDuplication: String? { get set }
 }
 
 @objc public class IFADuplicationUtils: NSObject {
@@ -14,7 +14,7 @@ import Foundation
     //MARK: Public
 
     public static func name(forDuplicateOf duplicateSource: IFADuplication, inItems items: Array<IFADuplication>) -> String? {
-        guard let duplicateSourceName = duplicateSource.name else {
+        guard let duplicateSourceName = duplicateSource.uniqueNameForDuplication else {
             return nil
         }
         let firstHalf: String
@@ -36,7 +36,7 @@ import Foundation
     }
     
     static func highestCopySequence(forDuplicateOf duplicateSource: IFADuplication, inItems items: Array<IFADuplication>) -> Int? {
-        guard let duplicateSourceName = duplicateSource.name else {
+        guard let duplicateSourceName = duplicateSource.uniqueNameForDuplication else {
             return nil
         }
         let duplicateSourceRegexMatchStrings = regexMatchStrings(forInputString: duplicateSourceName)
@@ -48,7 +48,7 @@ import Foundation
         }
         var highestCopySequence = 0
         for item in items {
-            guard let itemName = item.name else {
+            guard let itemName = item.uniqueNameForDuplication else {
                 continue
             }
             let itemRegexMatchStrings = regexMatchStrings(forInputString: itemName)
@@ -78,7 +78,7 @@ import Foundation
     }
     
     static func significantDuplicationRegexGroup(forItem item: IFADuplication) -> String? {
-        return significantDuplicationRegexGroup(forName: item.name)
+        return significantDuplicationRegexGroup(forName: item.uniqueNameForDuplication)
     }
 
     static func significantDuplicationRegexGroup(forName name: String?) -> String? {
@@ -98,7 +98,7 @@ import Foundation
 
     static func regexMatchStrings(forInputString inputString: String) -> [String] {
 
-        print("regexMatchStrings forInputString: \(inputString)")
+//        print("regexMatchStrings forInputString: \(inputString)")
 
         let pattern = "^(.*)( (Copy( (\\d+))?))$"
         let regex = try! NSRegularExpression(pattern: pattern, options: [])
@@ -111,10 +111,10 @@ import Foundation
                 guard range.length > 0 else {
                     continue
                 }
-                print("  range.location: \(range.location), length: \(range.length)")
+//                print("  range.location: \(range.location), length: \(range.length)")
                 let r = inputString.index(inputString.startIndex, offsetBy: range.location)..<inputString.index(inputString.startIndex, offsetBy: range.location+range.length)
                 let s = inputString.substring(with: r)
-                print("    s: \(s)")
+//                print("    s: \(s)")
                 matchStrings.append(s)
             }
         }

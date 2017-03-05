@@ -137,8 +137,8 @@ class IFADuplicationTests: XCTestCase {
 }
 
 class IFADuplicationTestClass: IFADuplication {
-    var name: String?
+    var uniqueNameForDuplication: String?
     init(_ name: String) {
-        self.name = name
+        self.uniqueNameForDuplication = name
     }
 }
