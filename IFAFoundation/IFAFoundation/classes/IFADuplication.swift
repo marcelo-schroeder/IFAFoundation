@@ -5,14 +5,26 @@
 
 import Foundation
 
+/// This protocol allows to mark a data structure definition as possible to duplicate.
 @objc public protocol IFADuplication {
+
+    /// Variable that allows to manage a unique name. Implementing this allows automatic management of unique names when duplicating (e.g. duplicate of "Source Name" will be "Source Name Copy")
     var uniqueNameForDuplication: String? { get set }
+
 }
 
+/// Utilities used when duplicating objects that implement the IFADuplication protocol
 @objc public class IFADuplicationUtils: NSObject {
     
     //MARK: Public
 
+    /**
+     Hello.
+     
+     - parameter forDuplicateOf: Object to be duplicated.
+     - parameter inItems: Array containing all instances of the same type of object being duplicated. This is required so that the correct duplicate's name can be determined.
+     - returns: Unique name of the duplicate object.
+     */
     public static func name(forDuplicateOf duplicateSource: IFADuplication, inItems items: Array<IFADuplication>) -> String? {
         guard let duplicateSourceName = duplicateSource.uniqueNameForDuplication else {
             return nil
