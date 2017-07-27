@@ -5,16 +5,28 @@
 
 import Foundation
 
+/// This protocol allows to mark a data structure definition as possible to duplicate.
 @objc public protocol IFADuplication {
-    var name: String? { get }
+
+    /// Variable that allows to manage a unique name. Implementing this allows automatic management of unique names when duplicating (e.g. duplicate of "Source Name" will be "Source Name Copy")
+    var uniqueNameForDuplication: String? { get set }
+
 }
 
+/// Utilities used when duplicating objects that implement the IFADuplication protocol
 @objc public class IFADuplicationUtils: NSObject {
     
     //MARK: Public
 
-    public static func name(forDuplicateOf duplicateSource: IFADuplication, existingItems: Array<IFADuplication>) -> String? {
-        guard let duplicateSourceName = duplicateSource.name else {
+    /**
+     Hello.
+     
+     - parameter forDuplicateOf: Object to be duplicated.
+     - parameter inItems: Array containing all instances of the same type of object being duplicated. This is required so that the correct duplicate's name can be determined.
+     - returns: Unique name of the duplicate object.
+     */
+    public static func name(forDuplicateOf duplicateSource: IFADuplication, inItems items: Array<IFADuplication>) -> String? {
+        guard let duplicateSourceName = duplicateSource.uniqueNameForDuplication else {
             return nil
         }
         let firstHalf: String
@@ -24,7 +36,7 @@ import Foundation
         } else {
             firstHalf = duplicateSourceName
         }
-        let nextCopySequence = highestCopySequence(inItems: existingItems) + 1
+        let nextCopySequence = highestCopySequence(forDuplicateOf: duplicateSource, inItems: items)! + 1
         let secondHalf = nextCopySequence == 1 ? " Copy" : " Copy \(nextCopySequence)"
         return "\(firstHalf)\(secondHalf)"
     }
@@ -35,10 +47,33 @@ import Foundation
         
     }
     
-    static func highestCopySequence(inItems items: Array<IFADuplication>) -> Int {
+    static func highestCopySequence(forDuplicateOf duplicateSource: IFADuplication, inItems items: Array<IFADuplication>) -> Int? {
+        guard let duplicateSourceName = duplicateSource.uniqueNameForDuplication else {
+            return nil
+        }
+        let duplicateSourceRegexMatchStrings = regexMatchStrings(forInputString: duplicateSourceName)
+        let duplicateSourceBaseName: String
+        if duplicateSourceRegexMatchStrings.count == 0 {
+            duplicateSourceBaseName = duplicateSourceName
+        } else {
+            duplicateSourceBaseName = duplicateSourceRegexMatchStrings[1]
+        }
         var highestCopySequence = 0
         for item in items {
-            guard let significantDuplicationRegexGroup = significantDuplicationRegexGroup(forName: item.name) else {
+            guard let itemName = item.uniqueNameForDuplication else {
+                continue
+            }
+            let itemRegexMatchStrings = regexMatchStrings(forInputString: itemName)
+            let itemBaseName: String
+            if itemRegexMatchStrings.count == 0 {
+                itemBaseName = itemName
+            } else {
+                itemBaseName = itemRegexMatchStrings[1]
+            }
+            guard duplicateSourceBaseName == itemBaseName else {
+                continue
+            }
+            guard let significantDuplicationRegexGroup = significantDuplicationRegexGroup(forName: itemName) else {
                 continue
             }
             let copySequence: Int
@@ -55,7 +90,7 @@ import Foundation
     }
     
     static func significantDuplicationRegexGroup(forItem item: IFADuplication) -> String? {
-        return significantDuplicationRegexGroup(forName: item.name)
+        return significantDuplicationRegexGroup(forName: item.uniqueNameForDuplication)
     }
 
     static func significantDuplicationRegexGroup(forName name: String?) -> String? {
