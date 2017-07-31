@@ -21,8 +21,8 @@ import Foundation
     /**
      Hello.
      
-     - parameter forDuplicateOf: Object to be duplicated.
-     - parameter inItems: Array containing all instances of the same type of object being duplicated. This is required so that the correct duplicate's name can be determined.
+     - parameter duplicateSource: Object to be duplicated.
+     - parameter items: Array containing all instances of the same type of object being duplicated. This is required so that the correct duplicate's name can be determined.
      - returns: Unique name of the duplicate object.
      */
     public static func name(forDuplicateOf duplicateSource: IFADuplication, inItems items: Array<IFADuplication>) -> String? {
