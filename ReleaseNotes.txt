@@ -1,1 +1,1 @@
-[NEW] Added IFADuplication.swift.
+[FIX] Fixed documentation issues that prevented the release of other IFA modules that depend on this module.
