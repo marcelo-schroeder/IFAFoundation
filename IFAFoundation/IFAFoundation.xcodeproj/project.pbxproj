@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		107383259240273E375EDACC /* IFADuplication.swift in Sources */ = {isa = PBXBuildFile; fileRef = 107386EA68895DE8D0056239 /* IFADuplication.swift */; };
+		107383259240273E375EDACC /* Duplication.swift in Sources */ = {isa = PBXBuildFile; fileRef = 107386EA68895DE8D0056239 /* Duplication.swift */; };
 		10738C84775FC70F681B3852 /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = 10738C50C5D62009136679FD /* LICENSE */; };
 		336FA09902344B05A0B5676B /* Pods_IFAFoundationTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7C1045E48743E41A2C6733B4 /* Pods_IFAFoundationTests.framework */; };
 		F7156BF11BE952FB0009EFF4 /* IFAFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F7156BE61BE952FB0009EFF4 /* IFAFoundation.framework */; };
@@ -45,7 +45,7 @@
 		F7650B3F1BE9595700B97932 /* NSString+IFAFoundation.h in Headers */ = {isa = PBXBuildFile; fileRef = F7650B1E1BE9595700B97932 /* NSString+IFAFoundation.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		F7650B401BE9595700B97932 /* NSString+IFAFoundation.m in Sources */ = {isa = PBXBuildFile; fileRef = F7650B1F1BE9595700B97932 /* NSString+IFAFoundation.m */; };
 		F77FF82A1C51CC4D00343884 /* NSStringTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 1073849B78BF951ED2792918 /* NSStringTests.m */; };
-		F7B360CB1E6951F700CDCC47 /* IFADuplicationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10738436D08E006D08231A13 /* IFADuplicationTests.swift */; };
+		F7B360CB1E6951F700CDCC47 /* DuplicationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10738436D08E006D08231A13 /* DuplicationTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -59,9 +59,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		10738436D08E006D08231A13 /* IFADuplicationTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IFADuplicationTests.swift; sourceTree = "<group>"; };
+		10738436D08E006D08231A13 /* DuplicationTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DuplicationTests.swift; sourceTree = "<group>"; };
 		1073849B78BF951ED2792918 /* NSStringTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NSStringTests.m; sourceTree = "<group>"; };
-		107386EA68895DE8D0056239 /* IFADuplication.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IFADuplication.swift; sourceTree = "<group>"; };
+		107386EA68895DE8D0056239 /* Duplication.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Duplication.swift; sourceTree = "<group>"; };
 		10738C50C5D62009136679FD /* LICENSE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
 		6AD29AE985AF392E93274712 /* Pods-IFAFoundationTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-IFAFoundationTests.release.xcconfig"; path = "../Pods/Target Support Files/Pods-IFAFoundationTests/Pods-IFAFoundationTests.release.xcconfig"; sourceTree = "<group>"; };
 		7C1045E48743E41A2C6733B4 /* Pods_IFAFoundationTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_IFAFoundationTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -174,7 +174,7 @@
 			children = (
 				F7156BF71BE952FB0009EFF4 /* Info.plist */,
 				1073849B78BF951ED2792918 /* NSStringTests.m */,
-				10738436D08E006D08231A13 /* IFADuplicationTests.swift */,
+				10738436D08E006D08231A13 /* DuplicationTests.swift */,
 			);
 			path = IFAFoundationTests;
 			sourceTree = "<group>";
@@ -215,7 +215,7 @@
 				F7650B1D1BE9595700B97932 /* NSObject+IFAFoundation.m */,
 				F7650B1E1BE9595700B97932 /* NSString+IFAFoundation.h */,
 				F7650B1F1BE9595700B97932 /* NSString+IFAFoundation.m */,
-				107386EA68895DE8D0056239 /* IFADuplication.swift */,
+				107386EA68895DE8D0056239 /* Duplication.swift */,
 			);
 			path = classes;
 			sourceTree = "<group>";
@@ -422,7 +422,7 @@
 				F7650B401BE9595700B97932 /* NSString+IFAFoundation.m in Sources */,
 				F7650B2A1BE9595700B97932 /* IFAFoundationConstants.m in Sources */,
 				F7650B2E1BE9595700B97932 /* IFAUtils.m in Sources */,
-				107383259240273E375EDACC /* IFADuplication.swift in Sources */,
+				107383259240273E375EDACC /* Duplication.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -431,7 +431,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F77FF82A1C51CC4D00343884 /* NSStringTests.m in Sources */,
-				F7B360CB1E6951F700CDCC47 /* IFADuplicationTests.swift in Sources */,
+				F7B360CB1E6951F700CDCC47 /* DuplicationTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

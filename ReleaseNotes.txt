@@ -1,1 +1,1 @@
-[FIX] Fixed documentation issues that prevented the release of other IFA modules that depend on this module.
+[CHANGE] Removed prefixes from IFADuplication and IFADuplicationUtils Swift types.
