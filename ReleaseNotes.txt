@@ -1,1 +1,2 @@
 [CHANGE] Removed prefixes from IFADuplication and IFADuplicationUtils Swift types.
+[NEW] New TypedNotification for strongly typed notifications in Swift.

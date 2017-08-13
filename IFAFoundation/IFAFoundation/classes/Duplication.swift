@@ -6,7 +6,7 @@
 import Foundation
 
 /// This protocol allows to mark a data structure definition as possible to duplicate.
-@objc (IFADuplicatioN) public protocol Duplication {
+@objc (IFADuplication) public protocol Duplication {
 
     /// Variable that allows to manage a unique name. Implementing this allows automatic management of unique names when duplicating (e.g. duplicate of "Source Name" will be "Source Name Copy")
     var uniqueNameForDuplication: String? { get set }
