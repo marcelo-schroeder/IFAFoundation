@@ -11,14 +11,16 @@ import Foundation
 /// Strongly typed notification inspired by: [Michael Helmbrecht's TypedNotification](https://github.com/mrh-is/PugNotification)
 public protocol TypedNotification {
     var name: String { get }
-    var content: TypedNotificationContentType? { get }
+    var content: TypedNotificationContent? { get }
 }
 
-public protocol TypedNotificationContentType {
+/// TypedNotification's content conformance
+public protocol TypedNotificationContent {
     init()
 }
 
-public class ObserverToken {
+/// An opaque object to act as the observer
+public class TypedNotificationObserver {
     fileprivate let observer: NSObjectProtocol
     
     fileprivate init(observer: NSObjectProtocol) {
@@ -28,45 +30,59 @@ public class ObserverToken {
 
 public extension TypedNotification {
 
+    /// Posts notification represented by the receiver.
     public func post() {
         type(of: self).post(self)
     }
     
+    /**
+     Posts the notification received as the parameter.
+     */
     public static func post(_ notification: Self) {
         let name = Notification.Name(rawValue: notification.name)
         let userInfo = notification.content.map({ ["content": $0] })
         NotificationCenter.default.post(name: name, object: nil, userInfo: userInfo)
     }
     
-    public static func addObserver(_ notification: Self, using block: @escaping () -> Void) -> ObserverToken {
-        let name = Notification.Name(rawValue: notification.name)
+    /**
+     Adds an observer closure with no input parameters for a given typed notification type.
+     - parameter notificationType: bla bla
+     - parameter block: bla bla fsdklfjsadlf
+     - returns: An opaque object to act as the observer
+     */
+    public static func addObserver(_ notificationType: Self, using block: @escaping () -> Void) -> TypedNotificationObserver {
+        let name = Notification.Name(rawValue: notificationType.name)
         let observer = NotificationCenter.default.addObserver(forName: name, object: nil, queue: nil) { _ in
             block()
         }
-        return ObserverToken(observer: observer)
+        return TypedNotificationObserver(observer: observer)
     }
 
-    public static func addObserver <ContentType: TypedNotificationContentType> (_ notification: (ContentType) -> Self, using block: @escaping (ContentType) -> Void) -> ObserverToken {
-        let name = Notification.Name(rawValue: notification(ContentType()).name)
+    /**
+     Adds an observer closure that receives the content of a given typed notification type.
+     - returns: An opaque object to act as the observer
+     */
+    public static func addObserver <ContentType: TypedNotificationContent> (_ notificationType: (ContentType) -> Self, using block: @escaping (ContentType) -> Void) -> TypedNotificationObserver {
+        let name = Notification.Name(rawValue: notificationType(ContentType()).name)
         let observer = NotificationCenter.default.addObserver(forName: name, object: nil, queue: nil) { notification in
             if let content = notification.userInfo?["content"] as? ContentType {
                 block(content)
             }
         }
-        return ObserverToken(observer: observer)
+        return TypedNotificationObserver(observer: observer)
     }
     
-    public static func removeObserver(_ observer: ObserverToken) {
+    public static func removeObserver(_ observer: TypedNotificationObserver) {
         NotificationCenter.default.removeObserver(observer.observer)
     }
 
 }
 
-extension Int: TypedNotificationContentType {}
-extension Float: TypedNotificationContentType {}
-extension Double: TypedNotificationContentType {}
-extension Bool: TypedNotificationContentType {}
-extension String: TypedNotificationContentType {}
-extension Array: TypedNotificationContentType {}
-extension Dictionary: TypedNotificationContentType {}
-extension Set: TypedNotificationContentType {}
+extension Int: TypedNotificationContent {}
+extension Float: TypedNotificationContent {}
+extension Double: TypedNotificationContent {}
+extension Bool: TypedNotificationContent {}
+extension String: TypedNotificationContent {}
+extension Array: TypedNotificationContent {}
+extension Dictionary: TypedNotificationContent {}
+extension Set: TypedNotificationContent {}

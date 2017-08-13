@@ -19,7 +19,7 @@ class TypedNotificationTests: XCTestCase {
         // Put teardown code here. This method is called after the invocation of each test method in the class.
     }
     
-    func testNotificationWithoutArgument() {
+    func testNotificationWithoutParameter() {
         // given
         var notificationReceived: Bool = false
         let token = TestTypedNotification.addObserver(TestTypedNotification.one) {
@@ -33,17 +33,17 @@ class TypedNotificationTests: XCTestCase {
         TestTypedNotification.removeObserver(token)
     }
     
-    func testNotificationWithArgument() {
+    func testNotificationWithParameter() {
         // given
-        var actualTestArgument: String?
-        let token = TestTypedNotification.addObserver(TestTypedNotification.two) { (testArgument) in
-            actualTestArgument = testArgument
+        var actualTestParameter: String?
+        let token = TestTypedNotification.addObserver(TestTypedNotification.two) { (testParameter) in
+            actualTestParameter = testParameter
         }
-        let notification = TestTypedNotification.two(testArgument: "test")
+        let notification = TestTypedNotification.two(testParameter: "test")
         // when
         notification.post()
         // then
-        XCTAssertEqual(actualTestArgument, "test")
+        XCTAssertEqual(actualTestParameter, "test")
         TestTypedNotification.removeObserver(token)
     }
     
@@ -65,7 +65,7 @@ class TypedNotificationTests: XCTestCase {
 
 enum TestTypedNotification {
     case one
-    case two(testArgument: String)
+    case two(testParameter: String)
 }
 
 extension TestTypedNotification: TypedNotification {
@@ -77,12 +77,12 @@ extension TestTypedNotification: TypedNotification {
             return "com.infoaccent.foundation.notification.two"
         }
     }
-    public var content: TypedNotificationContentType? {
+    public var content: TypedNotificationContent? {
         switch self {
         case .one:
             return nil
-        case .two(let testArgument):
-            return testArgument
+        case .two(let testParameter):
+            return testParameter
         }
     }
 }
