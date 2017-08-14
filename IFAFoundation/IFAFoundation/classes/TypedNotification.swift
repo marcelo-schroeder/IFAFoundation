@@ -26,6 +26,10 @@ public class TypedNotificationObserver {
     fileprivate init(observer: NSObjectProtocol) {
         self.observer = observer
     }
+
+    deinit {
+        NotificationCenter.default.removeObserver(observer)
+    }
 }
 
 public extension TypedNotification {
@@ -76,7 +80,7 @@ public extension TypedNotification {
     
     /**
      Removes given observer.
-     - paratert observer: Observer to remove.
+     - parameter observer: Observer to remove.
      */
     public static func removeObserver(_ observer: TypedNotificationObserver) {
         NotificationCenter.default.removeObserver(observer.observer)
