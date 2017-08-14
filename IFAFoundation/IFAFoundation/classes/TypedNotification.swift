@@ -46,8 +46,8 @@ public extension TypedNotification {
     
     /**
      Adds an observer closure with no input parameters for a given typed notification type.
-     - parameter notificationType: bla bla
-     - parameter block: bla bla fsdklfjsadlf
+     - parameter notificationType: The type of notification to observe.
+     - parameter block: Closure to execute upon receiving the notification.
      - returns: An opaque object to act as the observer
      */
     public static func addObserver(_ notificationType: Self, using block: @escaping () -> Void) -> TypedNotificationObserver {
@@ -60,6 +60,8 @@ public extension TypedNotification {
 
     /**
      Adds an observer closure that receives the content of a given typed notification type.
+     - parameter notificationType: The type of notification to observe.
+     - parameter block: Closure to execute upon receiving the notification.
      - returns: An opaque object to act as the observer
      */
     public static func addObserver <ContentType: TypedNotificationContent> (_ notificationType: (ContentType) -> Self, using block: @escaping (ContentType) -> Void) -> TypedNotificationObserver {
@@ -72,6 +74,10 @@ public extension TypedNotification {
         return TypedNotificationObserver(observer: observer)
     }
     
+    /**
+     Removes given observer.
+     - paratert observer: Observer to remove.
+     */
     public static func removeObserver(_ observer: TypedNotificationObserver) {
         NotificationCenter.default.removeObserver(observer.observer)
     }

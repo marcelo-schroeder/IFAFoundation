@@ -72,9 +72,9 @@ extension TestTypedNotification: TypedNotification {
     public var name: String {
         switch self {
         case .one:
-            return "com.infoaccent.foundation.notification.one"
+            return "com.infoaccent.foundation.one"
         case .two:
-            return "com.infoaccent.foundation.notification.two"
+            return "com.infoaccent.foundation.two"
         }
     }
     public var content: TypedNotificationContent? {
