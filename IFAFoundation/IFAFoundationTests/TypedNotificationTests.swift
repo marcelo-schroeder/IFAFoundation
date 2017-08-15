@@ -84,6 +84,21 @@ class TypedNotificationTests: XCTestCase {
         TestTypedNotification.removeObserver(token)
     }
     
+    func testThatObserverIsRemovedOnDeinit() {
+        // given
+        var notificationReceived: Bool = false
+        var token: TypedNotificationObserver? = TestTypedNotification.addObserver(TestTypedNotification.one) {
+            notificationReceived = true
+        }
+        let notification = TestTypedNotification.one
+        XCTAssertNotNil(token)  // To silence not used warning
+        token = nil // Deinit
+        // when
+        notification.post()
+        // then
+        XCTAssertFalse(notificationReceived)
+    }
+    
 }
 
 fileprivate enum TestTypedNotification {
