@@ -11,14 +11,6 @@ import IFAFoundation
 
 class TypedNotificationTests: XCTestCase {
     
-    override func setUp() {
-        super.setUp()
-    }
-    
-    override func tearDown() {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
-    }
-    
     func testNotificationWithoutParameter() {
         // given
         var notificationReceived: Bool = false
@@ -61,11 +53,43 @@ class TypedNotificationTests: XCTestCase {
         XCTAssertFalse(notificationReceived)
     }
     
+    func testNotificationWithObjectMatching() {
+        // given
+        let testObject = TestClass()
+        var actualTestObject: TestClass?
+        let token = TestTypedNotification.addObserver(TestTypedNotification.three, object: testObject) { (testObject) in
+            actualTestObject = testObject
+        }
+        let notification = TestTypedNotification.three(testObject: testObject)
+        // when
+        notification.post()
+        // then
+        XCTAssertTrue(actualTestObject === testObject)
+        TestTypedNotification.removeObserver(token)
+    }
+    
+    func testNotificationWithObjectNotMatching() {
+        // given
+        let objectForObserver = TestClass()
+        let objectForNotification = TestClass()
+        var notificationReceived: Bool = false
+        let token = TestTypedNotification.addObserver(TestTypedNotification.three, object: objectForObserver) { (_) in
+            notificationReceived = true
+        }
+        let notification = TestTypedNotification.three(testObject: objectForNotification)
+        // when
+        notification.post()
+        // then
+        XCTAssertFalse(notificationReceived)
+        TestTypedNotification.removeObserver(token)
+    }
+    
 }
 
-enum TestTypedNotification {
+fileprivate enum TestTypedNotification {
     case one
     case two(testParameter: String)
+    case three(testObject: TestClass)
 }
 
 extension TestTypedNotification: TypedNotification {
@@ -75,14 +99,31 @@ extension TestTypedNotification: TypedNotification {
             return "com.infoaccent.foundation.one"
         case .two:
             return "com.infoaccent.foundation.two"
+        case .three:
+            return "com.infoaccent.foundation.three"
+        }
+    }
+    public var object: Any? {
+        switch self {
+        case .three(let testObject):
+            return testObject
+        default:
+            return nil
         }
     }
     public var content: TypedNotificationContent? {
         switch self {
-        case .one:
-            return nil
         case .two(let testParameter):
             return testParameter
+        case .three(let testObject):
+            return testObject
+        default:
+            return nil
         }
+    }
+}
+
+fileprivate class TestClass: TypedNotificationContent {
+    required init() {
     }
 }
