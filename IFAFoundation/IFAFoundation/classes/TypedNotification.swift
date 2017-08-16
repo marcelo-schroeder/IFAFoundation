@@ -23,13 +23,15 @@ public protocol TypedNotificationContent {
 /// An opaque object to act as the observer
 public class TypedNotificationObserver {
     fileprivate let observer: NSObjectProtocol
+    fileprivate let notificationCentre: NotificationCenter
     
-    fileprivate init(observer: NSObjectProtocol) {
+    fileprivate init(observer: NSObjectProtocol, notificationCentre: NotificationCenter) {
         self.observer = observer
+        self.notificationCentre = notificationCentre
     }
 
     deinit {
-        NotificationCenter.default.removeObserver(observer)
+        self.notificationCentre.removeObserver(observer)
     }
 }
 
@@ -44,17 +46,17 @@ public extension TypedNotification {
     }
     
     /// Posts notification represented by the receiver.
-    public func post() {
-        type(of: self).post(self)
+    public func post(notificationCentre: NotificationCenter = NotificationCenter.default) {
+        type(of: self).post(self, notificationCentre: notificationCentre)
     }
     
     /**
      Posts the notification received as the parameter.
      */
-    public static func post(_ notification: Self) {
+    public static func post(_ notification: Self, notificationCentre: NotificationCenter = NotificationCenter.default) {
         let name = Notification.Name(rawValue: notification.name)
         let userInfo = notification.content.map({ ["content": $0] })
-        NotificationCenter.default.post(name: name, object: notification.object, userInfo: userInfo)
+        notificationCentre.post(name: name, object: notification.object, userInfo: userInfo)
     }
     
     /**
@@ -65,12 +67,12 @@ public extension TypedNotification {
      - parameter block: Closure to execute upon receiving the notification.
      - returns: An opaque object to act as the observer
      */
-    public static func addObserver(_ notificationType: Self, object: Any? = nil, queue: OperationQueue? = nil, using block: @escaping () -> Void) -> TypedNotificationObserver {
+    public static func addObserver(_ notificationType: Self, notificationCentre: NotificationCenter = NotificationCenter.default, object: Any? = nil, queue: OperationQueue? = nil, using block: @escaping () -> Void) -> TypedNotificationObserver {
         let name = Notification.Name(rawValue: notificationType.name)
-        let observer = NotificationCenter.default.addObserver(forName: name, object: object, queue: queue) { notification in
+        let observer = notificationCentre.addObserver(forName: name, object: object, queue: queue) { notification in
             block()
         }
-        return TypedNotificationObserver(observer: observer)
+        return TypedNotificationObserver(observer: observer, notificationCentre: notificationCentre)
     }
 
     /**
@@ -81,22 +83,22 @@ public extension TypedNotification {
      - parameter block: Closure to execute upon receiving the notification.
      - returns: An opaque object to act as the observer
      */
-    public static func addObserver <ContentType: TypedNotificationContent> (_ notificationType: (ContentType) -> Self, object: Any? = nil, queue: OperationQueue? = nil, using block: @escaping (ContentType) -> Void) -> TypedNotificationObserver {
+    public static func addObserver <ContentType: TypedNotificationContent> (_ notificationType: (ContentType) -> Self, notificationCentre: NotificationCenter = NotificationCenter.default, object: Any? = nil, queue: OperationQueue? = nil, using block: @escaping (ContentType) -> Void) -> TypedNotificationObserver {
         let name = Notification.Name(rawValue: notificationType(ContentType()).name)
-        let observer = NotificationCenter.default.addObserver(forName: name, object: object, queue: queue) { notification in
+        let observer = notificationCentre.addObserver(forName: name, object: object, queue: queue) { notification in
             if let content = notification.userInfo?["content"] as? ContentType {
                 block(content)
             }
         }
-        return TypedNotificationObserver(observer: observer)
+        return TypedNotificationObserver(observer: observer, notificationCentre: notificationCentre)
     }
     
     /**
      Removes given observer.
      - parameter observer: Observer to remove.
      */
-    public static func removeObserver(_ observer: TypedNotificationObserver) {
-        NotificationCenter.default.removeObserver(observer.observer)
+    public static func removeObserver(_ observer: TypedNotificationObserver, notificationCentre: NotificationCenter = NotificationCenter.default) {
+        notificationCentre.removeObserver(observer.observer)
     }
 
 }
