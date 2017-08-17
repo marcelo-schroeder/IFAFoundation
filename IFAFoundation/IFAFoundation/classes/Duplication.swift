@@ -6,15 +6,15 @@
 import Foundation
 
 /// This protocol allows to mark a data structure definition as possible to duplicate.
-@objc public protocol IFADuplication {
+@objc (IFADuplication) public protocol Duplication {
 
     /// Variable that allows to manage a unique name. Implementing this allows automatic management of unique names when duplicating (e.g. duplicate of "Source Name" will be "Source Name Copy")
     var uniqueNameForDuplication: String? { get set }
 
 }
 
-/// Utilities used when duplicating objects that implement the IFADuplication protocol
-@objc public class IFADuplicationUtils: NSObject {
+/// Utilities used when duplicating objects that implement the Duplication protocol
+@objc (IFADuplicationUtils) public class DuplicationUtils: NSObject {
     
     //MARK: Public
 
@@ -25,7 +25,7 @@ import Foundation
      - parameter items: Array containing all instances of the same type of object being duplicated. This is required so that the correct duplicate's name can be determined.
      - returns: Unique name of the duplicate object.
      */
-    public static func name(forDuplicateOf duplicateSource: IFADuplication, inItems items: Array<IFADuplication>) -> String? {
+    public static func name(forDuplicateOf duplicateSource: Duplication, inItems items: Array<Duplication>) -> String? {
         guard let duplicateSourceName = duplicateSource.uniqueNameForDuplication else {
             return nil
         }
@@ -47,7 +47,7 @@ import Foundation
         
     }
     
-    static func highestCopySequence(forDuplicateOf duplicateSource: IFADuplication, inItems items: Array<IFADuplication>) -> Int? {
+    static func highestCopySequence(forDuplicateOf duplicateSource: Duplication, inItems items: Array<Duplication>) -> Int? {
         guard let duplicateSourceName = duplicateSource.uniqueNameForDuplication else {
             return nil
         }
@@ -89,7 +89,7 @@ import Foundation
         return highestCopySequence
     }
     
-    static func significantDuplicationRegexGroup(forItem item: IFADuplication) -> String? {
+    static func significantDuplicationRegexGroup(forItem item: Duplication) -> String? {
         return significantDuplicationRegexGroup(forName: item.uniqueNameForDuplication)
     }
 
