@@ -119,13 +119,13 @@ import Foundation
         var matchStrings: [String] = []
         for match in matches {
             for i in 0..<match.numberOfRanges {
-                let range = match.rangeAt(i)
+                let range = match.range(at: i)
                 guard range.length > 0 else {
                     continue
                 }
 //                print("  range.location: \(range.location), length: \(range.length)")
                 let r = inputString.index(inputString.startIndex, offsetBy: range.location)..<inputString.index(inputString.startIndex, offsetBy: range.location+range.length)
-                let s = inputString.substring(with: r)
+                let s = String(inputString[r])
 //                print("    s: \(s)")
                 matchStrings.append(s)
             }
