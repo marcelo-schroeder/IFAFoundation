@@ -7,10 +7,10 @@ target :'IFAFoundation' do
 
     target :'IFAFoundationTests' do
 
-        pod 'IFATestingSupport'
+#        pod 'IFATestingSupport'
         #pod 'IFATestingSupport', :git => 'https://github.com/marcelo-schroeder/IFATestingSupport.git', :tag => 'v0.1.1'
         # pod 'IFATestingSupport', :git => 'https://github.com/marcelo-schroeder/IFATestingSupport.git', :branch => 'development'
-        # pod 'IFATestingSupport', :path => '/Users/mschroeder/myfiles/projects/Xcode6/IFATestingSupport/IFATestingSupport_development'
+         pod 'IFATestingSupport', :path => '/Users/mschroeder/myfiles/projects/Xcode/IFATestingSupport/IFATestingSupport_development'
 
         pod 'OCHamcrest'
         pod 'OCMock', :inhibit_warnings => true
