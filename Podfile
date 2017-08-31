@@ -1,4 +1,4 @@
-platform :ios, '10.0'
+platform :ios, '9.0'
 workspace 'IFAFoundation'
 project 'IFAFoundation/IFAFoundation.xcodeproj'
 use_frameworks!
