@@ -25,7 +25,7 @@ import Foundation
      - parameter items: Array containing all instances of the same type of object being duplicated. This is required so that the correct duplicate's name can be determined.
      - returns: Unique name of the duplicate object.
      */
-    public static func name(forDuplicateOf duplicateSource: Duplication, inItems items: Array<Duplication>) -> String? {
+    @objc public static func name(forDuplicateOf duplicateSource: Duplication, inItems items: Array<Duplication>) -> String? {
         guard let duplicateSourceName = duplicateSource.uniqueNameForDuplication else {
             return nil
         }
