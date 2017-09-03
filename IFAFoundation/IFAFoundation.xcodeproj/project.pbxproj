@@ -385,14 +385,10 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/../Pods/Target Support Files/Pods-IFAFoundation-IFAFoundationTests/Pods-IFAFoundation-IFAFoundationTests-frameworks.sh",
-				"${BUILT_PRODUCTS_DIR}/IFATestingSupport/IFATestingSupport.framework",
-				"${BUILT_PRODUCTS_DIR}/OCHamcrest/OCHamcrest.framework",
 				"${BUILT_PRODUCTS_DIR}/OCMock/OCMock.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/IFATestingSupport.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/OCHamcrest.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/OCMock.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
