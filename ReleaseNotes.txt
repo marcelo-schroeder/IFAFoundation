@@ -1,2 +1,1 @@
-[CHANGE] Removed prefixes from IFADuplication and IFADuplicationUtils Swift types.
-[NEW] New TypedNotification for strongly typed notifications in Swift.
+[CHANGE] Lowest iOS version supported is now 10.
