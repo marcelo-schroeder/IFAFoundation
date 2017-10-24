@@ -1,1 +1,2 @@
 [CHANGE] Lowest iOS version supported is now 10.
+[NEW] Added new method to IFAUtils: isRunningInSimulator.

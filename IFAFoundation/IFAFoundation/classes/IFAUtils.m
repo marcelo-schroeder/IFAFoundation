@@ -246,6 +246,14 @@
     return floor(NSFoundationVersionNumber) > NSFoundationVersionNumber_iOS_7_1;
 }
 
++ (BOOL)isRunningInSimulator {
+#if TARGET_IPHONE_SIMULATOR
+    return YES;
+#else
+    return NO;
+#endif
+}
+
 + (NSString *)hardwareType {
     struct utsname systemInfo;
     uname(&systemInfo);
