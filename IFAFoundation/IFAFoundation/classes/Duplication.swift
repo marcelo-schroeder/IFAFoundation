@@ -25,7 +25,7 @@ import Foundation
      - parameter items: Array containing all instances of the same type of object being duplicated. This is required so that the correct duplicate's name can be determined.
      - returns: Unique name of the duplicate object.
      */
-    public static func name(forDuplicateOf duplicateSource: Duplication, inItems items: Array<Duplication>) -> String? {
+    @objc public static func name(forDuplicateOf duplicateSource: Duplication, inItems items: Array<Duplication>) -> String? {
         guard let duplicateSourceName = duplicateSource.uniqueNameForDuplication else {
             return nil
         }
@@ -119,13 +119,13 @@ import Foundation
         var matchStrings: [String] = []
         for match in matches {
             for i in 0..<match.numberOfRanges {
-                let range = match.rangeAt(i)
+                let range = match.range(at: i)
                 guard range.length > 0 else {
                     continue
                 }
 //                print("  range.location: \(range.location), length: \(range.length)")
                 let r = inputString.index(inputString.startIndex, offsetBy: range.location)..<inputString.index(inputString.startIndex, offsetBy: range.location+range.length)
-                let s = inputString.substring(with: r)
+                let s = String(inputString[r])
 //                print("    s: \(s)")
                 matchStrings.append(s)
             }
