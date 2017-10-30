@@ -71,6 +71,8 @@
 + (BOOL)isIOS7OrGreater;
 + (BOOL)isIOS8OrGreater;
 
++ (BOOL)isRunningInSimulator;
+
 + (NSString *)hardwareType;
 
 /**

@@ -5,7 +5,7 @@
 //  Created by: Marcelo Schroeder
 //
 
-#import <IFATestingSupport/IFACommonTests.h>
+@import XCTest;
 #import "NSString+IFAFoundation.h"
 
 @interface NSStringTests : XCTestCase 

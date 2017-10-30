@@ -20,10 +20,4 @@ platform :ios do
         sh 'curl https://www.bitrise.io/app/'"#{bitriseAppSlug}"'/build/start.json --data \'{"hook_info":{"type":"bitrise","api_token":"'"#{bitriseApiToken}"'"},"build_params":{"branch":"release","workflow_id":"GitHubRelease","environments":[{"mapped_to":"VERSION_NUMBER","value":"'"#{versionNumber}"'","is_expand":true}]}}\''
     end
 
-    override_lane :updateDependencies do
-        cocoapods(
-                repo_update: true
-        )
-    end
-
 end
