@@ -1,2 +1,1 @@
-[CHANGE] Lowest iOS version supported is now 10.
-[NEW] Added new method to IFAUtils: isRunningInSimulator.
+[FIX] Removed build warning introduced with Xcode 9.1.

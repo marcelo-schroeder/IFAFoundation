@@ -114,7 +114,7 @@ import Foundation
 
         let pattern = "^(.*)( (Copy( (\\d+))?))$"
         let regex = try! NSRegularExpression(pattern: pattern, options: [])
-        let matches = regex.matches(in: inputString, options: [], range: NSRange(location: 0, length: inputString.characters.count))
+        let matches = regex.matches(in: inputString, options: [], range: NSRange(location: 0, length: inputString.count))
 
         var matchStrings: [String] = []
         for match in matches {
