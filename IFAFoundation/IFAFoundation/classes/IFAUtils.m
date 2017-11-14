@@ -191,11 +191,6 @@
     return [self classForPropertyNamed:a_propertyName inClass:NSClassFromString(a_className)];
 }
 
-+(BOOL)deviceSupportsVibration{
-//    NSLog(@"[UIDevice currentDevice].model: %@", [UIDevice currentDevice].model);
-    return [[UIDevice currentDevice].model isEqualToString:@"iPhone"];
-}
-
 +(BOOL)nilOrEmptyForString:(NSString*)a_string{
     return a_string==nil || [[a_string stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceCharacterSet]] length]==0;
 }

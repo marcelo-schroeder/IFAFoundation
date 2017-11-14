@@ -1,1 +1,2 @@
-[FIX] Removed build warning introduced with Xcode 9.1.
+[CHANGE] Podspecs changed to support watchOS 3.0 or greater.
+[CHANGE] IFAUtils' deviceSupportsVibration moved to IFACoreUI's IFAUIUtils.

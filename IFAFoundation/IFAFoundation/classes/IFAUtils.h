@@ -51,7 +51,6 @@
                         inBundle:(NSBundle *)a_bundle;
 
 +(NSArray*)toArrayIfRequiredFromObject:(id)a_object;
-+(BOOL)deviceSupportsVibration;
 +(BOOL)nilOrEmptyForString:(NSString*)a_string;
 
 /* the methods below are based on GCD main thread dispatch queues */
