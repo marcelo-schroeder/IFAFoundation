@@ -1,2 +1,4 @@
 [CHANGE] Podspecs changed to support watchOS 3.0 or greater.
 [CHANGE] IFAUtils' deviceSupportsVibration moved to IFACoreUI's IFAUIUtils.
+[CHANGE] Removed dependencies on UIKit and CoreGraphics.
+[NEW] Moved IFASelectionManager and IFASingleSelectionManager from the IFACoreUI framework.

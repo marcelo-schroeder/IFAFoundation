@@ -54,7 +54,7 @@ static NSNumberFormatter *c_australianPhoneNumberFormatterMobileAndSpecialWithou
 
 + (NSString *)ifa_stringFromAustralianPhoneNumber:(NSNumber *)a_number{
     [self IFA_createAustralianPhoneNumberFormattersIfRequired];
-    CGFloat l_number = a_number.floatValue;
+    float l_number = a_number.floatValue;
     NSString *l_numberString = a_number.stringValue;
     if (l_number>=10000000 && l_number<=99999999) {
         return [c_australianPhoneNumberFormatterLandLineWithoutAreaCode stringFromNumber:a_number];

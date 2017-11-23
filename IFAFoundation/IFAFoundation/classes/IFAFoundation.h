@@ -20,8 +20,8 @@
 
 // Apple Frameworks
 @import Foundation;
-@import CoreGraphics;
-@import UIKit;
+//@import CoreGraphics;
+//@import UIKit;
 #import <objc/message.h>    // added so I could use objc_msgSend to get rid of ARC compiler warnings for performSelector method calls
 #import <sys/utsname.h>
 
@@ -47,3 +47,5 @@ FOUNDATION_EXPORT const unsigned char IFAFoundationVersionString[];
 #import "NSNumberFormatter+IFAFoundation.h"
 #import "NSString+IFAFoundation.h"
 #import "NSObject+IFAFoundation.h"
+#import "IFASelectionManager.h"
+#import "IFASingleSelectionManager.h"

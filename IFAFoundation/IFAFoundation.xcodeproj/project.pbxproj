@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		107383259240273E375EDACC /* Duplication.swift in Sources */ = {isa = PBXBuildFile; fileRef = 107386EA68895DE8D0056239 /* Duplication.swift */; };
 		10738C84775FC70F681B3852 /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = 10738C50C5D62009136679FD /* LICENSE */; };
+		9007C1B262B9346C1CF4198B /* Pods_IFAFoundationTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3031269E764E66E4D28EDD6B /* Pods_IFAFoundationTests.framework */; };
 		F7156BF11BE952FB0009EFF4 /* IFAFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F7156BE61BE952FB0009EFF4 /* IFAFoundation.framework */; };
 		F72C559A1F40F13100CF0AD1 /* TypedNotification.swift in Sources */ = {isa = PBXBuildFile; fileRef = F72C55991F40F13100CF0AD1 /* TypedNotification.swift */; };
 		F72C559C1F40F6D800CF0AD1 /* TypedNotificationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F72C559B1F40F6D800CF0AD1 /* TypedNotificationTests.swift */; };
@@ -47,6 +48,12 @@
 		F7650B401BE9595700B97932 /* NSString+IFAFoundation.m in Sources */ = {isa = PBXBuildFile; fileRef = F7650B1F1BE9595700B97932 /* NSString+IFAFoundation.m */; };
 		F77FF82A1C51CC4D00343884 /* NSStringTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 1073849B78BF951ED2792918 /* NSStringTests.m */; };
 		F7B360CB1E6951F700CDCC47 /* DuplicationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10738436D08E006D08231A13 /* DuplicationTests.swift */; };
+		F7BEA7611FC37D2C00295EFF /* IFASelectionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = F7BEA75F1FC37D2B00295EFF /* IFASelectionManager.m */; };
+		F7BEA7621FC37D2C00295EFF /* IFASelectionManager.h in Headers */ = {isa = PBXBuildFile; fileRef = F7BEA7601FC37D2B00295EFF /* IFASelectionManager.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		F7BEA7651FC37FE600295EFF /* IFASingleSelectionManagerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = F7BEA7631FC37FE500295EFF /* IFASingleSelectionManagerTests.m */; };
+		F7BEA7661FC37FE600295EFF /* IFASelectionManagerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = F7BEA7641FC37FE600295EFF /* IFASelectionManagerTests.m */; };
+		F7BEA7691FC3808900295EFF /* IFASingleSelectionManager.h in Headers */ = {isa = PBXBuildFile; fileRef = F7BEA7671FC3808900295EFF /* IFASingleSelectionManager.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		F7BEA76A1FC3808900295EFF /* IFASingleSelectionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = F7BEA7681FC3808900295EFF /* IFASingleSelectionManager.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -60,10 +67,13 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		04858813DC6C5864AA2C0065 /* Pods-IFAFoundationTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-IFAFoundationTests.release.xcconfig"; path = "../Pods/Target Support Files/Pods-IFAFoundationTests/Pods-IFAFoundationTests.release.xcconfig"; sourceTree = "<group>"; };
 		10738436D08E006D08231A13 /* DuplicationTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DuplicationTests.swift; sourceTree = "<group>"; };
 		1073849B78BF951ED2792918 /* NSStringTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NSStringTests.m; sourceTree = "<group>"; };
 		107386EA68895DE8D0056239 /* Duplication.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Duplication.swift; sourceTree = "<group>"; };
 		10738C50C5D62009136679FD /* LICENSE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
+		3031269E764E66E4D28EDD6B /* Pods_IFAFoundationTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_IFAFoundationTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		49F76E964B8693BA56987607 /* Pods-IFAFoundationTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-IFAFoundationTests.debug.xcconfig"; path = "../Pods/Target Support Files/Pods-IFAFoundationTests/Pods-IFAFoundationTests.debug.xcconfig"; sourceTree = "<group>"; };
 		F70DCCF31C4C273E0073028E /* ReleaseNotes.txt */ = {isa = PBXFileReference; lastKnownFileType = text; name = ReleaseNotes.txt; path = ../ReleaseNotes.txt; sourceTree = "<group>"; };
 		F7156BE61BE952FB0009EFF4 /* IFAFoundation.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = IFAFoundation.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F7156BEB1BE952FB0009EFF4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -105,6 +115,13 @@
 		F7650B1D1BE9595700B97932 /* NSObject+IFAFoundation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+IFAFoundation.m"; sourceTree = "<group>"; };
 		F7650B1E1BE9595700B97932 /* NSString+IFAFoundation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+IFAFoundation.h"; sourceTree = "<group>"; };
 		F7650B1F1BE9595700B97932 /* NSString+IFAFoundation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+IFAFoundation.m"; sourceTree = "<group>"; };
+		F7BEA75F1FC37D2B00295EFF /* IFASelectionManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IFASelectionManager.m; sourceTree = "<group>"; };
+		F7BEA7601FC37D2B00295EFF /* IFASelectionManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IFASelectionManager.h; sourceTree = "<group>"; };
+		F7BEA7631FC37FE500295EFF /* IFASingleSelectionManagerTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IFASingleSelectionManagerTests.m; sourceTree = "<group>"; };
+		F7BEA7641FC37FE600295EFF /* IFASelectionManagerTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IFASelectionManagerTests.m; sourceTree = "<group>"; };
+		F7BEA7671FC3808900295EFF /* IFASingleSelectionManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IFASingleSelectionManager.h; sourceTree = "<group>"; };
+		F7BEA7681FC3808900295EFF /* IFASingleSelectionManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IFASingleSelectionManager.m; sourceTree = "<group>"; };
+		F7C1B02A1FC75A130016483A /* Podfile */ = {isa = PBXFileReference; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		F7CD28301C44567F00F4C120 /* fastlane */ = {isa = PBXFileReference; lastKnownFileType = folder; name = fastlane; path = ../fastlane; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -121,6 +138,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F7156BF11BE952FB0009EFF4 /* IFAFoundation.framework in Frameworks */,
+				9007C1B262B9346C1CF4198B /* Pods_IFAFoundationTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -130,13 +148,24 @@
 		59EF07362C5B267B4F6B581C /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				3031269E764E66E4D28EDD6B /* Pods_IFAFoundationTests.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		AAD9F2642617B3BCDC9E8666 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				49F76E964B8693BA56987607 /* Pods-IFAFoundationTests.debug.xcconfig */,
+				04858813DC6C5864AA2C0065 /* Pods-IFAFoundationTests.release.xcconfig */,
+			);
+			name = Pods;
 			sourceTree = "<group>";
 		};
 		F7156BDC1BE952FB0009EFF4 = {
 			isa = PBXGroup;
 			children = (
+				F7C1B02A1FC75A130016483A /* Podfile */,
 				F70DCCF31C4C273E0073028E /* ReleaseNotes.txt */,
 				F75C516F1BF1338B0003174D /* IFAFoundation.podspec */,
 				F7156BE81BE952FB0009EFF4 /* IFAFoundation */,
@@ -145,6 +174,7 @@
 				10738C50C5D62009136679FD /* LICENSE */,
 				F7CD28301C44567F00F4C120 /* fastlane */,
 				59EF07362C5B267B4F6B581C /* Frameworks */,
+				AAD9F2642617B3BCDC9E8666 /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -169,6 +199,8 @@
 		F7156BF41BE952FB0009EFF4 /* IFAFoundationTests */ = {
 			isa = PBXGroup;
 			children = (
+				F7BEA7641FC37FE600295EFF /* IFASelectionManagerTests.m */,
+				F7BEA7631FC37FE500295EFF /* IFASingleSelectionManagerTests.m */,
 				F7156BF71BE952FB0009EFF4 /* Info.plist */,
 				1073849B78BF951ED2792918 /* NSStringTests.m */,
 				10738436D08E006D08231A13 /* DuplicationTests.swift */,
@@ -180,6 +212,10 @@
 		F7650AFE1BE9595700B97932 /* classes */ = {
 			isa = PBXGroup;
 			children = (
+				F7BEA7671FC3808900295EFF /* IFASingleSelectionManager.h */,
+				F7BEA7681FC3808900295EFF /* IFASingleSelectionManager.m */,
+				F7BEA7601FC37D2B00295EFF /* IFASelectionManager.h */,
+				F7BEA75F1FC37D2B00295EFF /* IFASelectionManager.m */,
 				F7650AFF1BE9595700B97932 /* IFAFoundation.h */,
 				F7650B001BE9595700B97932 /* IFAAssertionUtils.h */,
 				F7650B011BE9595700B97932 /* IFAAssertionUtils.m */,
@@ -226,6 +262,7 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F7BEA7621FC37D2C00295EFF /* IFASelectionManager.h in Headers */,
 				F7650B3F1BE9595700B97932 /* NSString+IFAFoundation.h in Headers */,
 				F7650B2B1BE9595700B97932 /* IFAPurgeableObject.h in Headers */,
 				F7650B371BE9595700B97932 /* NSDictionary+IFAFoundation.h in Headers */,
@@ -242,6 +279,7 @@
 				F7650B331BE9595700B97932 /* NSData+IFAFoundation.h in Headers */,
 				F7650B351BE9595700B97932 /* NSDate+IFAFoundation.h in Headers */,
 				F7650B2F1BE9595700B97932 /* IFAZeroingWeakReferenceContainer.h in Headers */,
+				F7BEA7691FC3808900295EFF /* IFASingleSelectionManager.h in Headers */,
 				F7650B251BE9595700B97932 /* IFADispatchQueueManager.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -271,9 +309,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = F7156BFD1BE952FB0009EFF4 /* Build configuration list for PBXNativeTarget "IFAFoundationTests" */;
 			buildPhases = (
+				8F8CCECFC1E88C193695AFBE /* [CP] Check Pods Manifest.lock */,
 				F7156BEC1BE952FB0009EFF4 /* Sources */,
 				F7156BED1BE952FB0009EFF4 /* Frameworks */,
 				F7156BEE1BE952FB0009EFF4 /* Resources */,
+				62B2C0A6A73D7CBF2C52792A /* [CP] Embed Pods Frameworks */,
+				C4F7C61208A302B9F02CE8E8 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -340,12 +381,67 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		62B2C0A6A73D7CBF2C52792A /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/../Pods/Target Support Files/Pods-IFAFoundationTests/Pods-IFAFoundationTests-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/OCMock/OCMock.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/OCMock.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/../Pods/Target Support Files/Pods-IFAFoundationTests/Pods-IFAFoundationTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		8F8CCECFC1E88C193695AFBE /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-IFAFoundationTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C4F7C61208A302B9F02CE8E8 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/../Pods/Target Support Files/Pods-IFAFoundationTests/Pods-IFAFoundationTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		F7156BE11BE952FB0009EFF4 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				F7650B241BE9595700B97932 /* IFADateRange.m in Sources */,
+				F7BEA76A1FC3808900295EFF /* IFASingleSelectionManager.m in Sources */,
 				F7650B301BE9595700B97932 /* IFAZeroingWeakReferenceContainer.m in Sources */,
 				F7650B321BE9595700B97932 /* NSCalendar+IFAFoundation.m in Sources */,
 				F7650B2C1BE9595700B97932 /* IFAPurgeableObject.m in Sources */,
@@ -356,6 +452,7 @@
 				F7650B3E1BE9595700B97932 /* NSObject+IFAFoundation.m in Sources */,
 				F7650B221BE9595700B97932 /* IFAAssertionUtils.m in Sources */,
 				F7650B381BE9595700B97932 /* NSDictionary+IFAFoundation.m in Sources */,
+				F7BEA7611FC37D2C00295EFF /* IFASelectionManager.m in Sources */,
 				F7650B3C1BE9595700B97932 /* NSNumberFormatter+IFAFoundation.m in Sources */,
 				F7650B361BE9595700B97932 /* NSDate+IFAFoundation.m in Sources */,
 				F7650B401BE9595700B97932 /* NSString+IFAFoundation.m in Sources */,
@@ -372,7 +469,9 @@
 			files = (
 				F77FF82A1C51CC4D00343884 /* NSStringTests.m in Sources */,
 				F72C559C1F40F6D800CF0AD1 /* TypedNotificationTests.swift in Sources */,
+				F7BEA7651FC37FE600295EFF /* IFASingleSelectionManagerTests.m in Sources */,
 				F7B360CB1E6951F700CDCC47 /* DuplicationTests.swift in Sources */,
+				F7BEA7661FC37FE600295EFF /* IFASelectionManagerTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -536,6 +635,7 @@
 		};
 		F7156BFE1BE952FB0009EFF4 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 49F76E964B8693BA56987607 /* Pods-IFAFoundationTests.debug.xcconfig */;
 			buildSettings = {
 				INFOPLIST_FILE = IFAFoundationTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
@@ -547,6 +647,7 @@
 		};
 		F7156BFF1BE952FB0009EFF4 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 04858813DC6C5864AA2C0065 /* Pods-IFAFoundationTests.release.xcconfig */;
 			buildSettings = {
 				INFOPLIST_FILE = IFAFoundationTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
