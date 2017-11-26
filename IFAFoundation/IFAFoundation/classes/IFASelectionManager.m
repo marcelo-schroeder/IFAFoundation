@@ -163,6 +163,7 @@
 - (void)performSelectionStateChangeWithSelectedObject_selectedObject:(id)a_selectedObject
                                                     deselectedObject:(id)a_deselectedObject
                                                            indexPath:(NSIndexPath *)a_indexPath
+                                                 deselectedIndexPath:(NSIndexPath *)a_deselectedIndexPath
                                                             userInfo:(NSDictionary *)a_userInfo
                                                     stateChangeBlock:(void (^)(void))a_stateChangeBlock {
 
@@ -172,6 +173,7 @@
                        willSelectObject:a_selectedObject
                          deselectObject:a_deselectedObject
                               indexPath:a_indexPath
+                    deselectedIndexPath:a_deselectedIndexPath
                                userInfo:a_userInfo];
     }
 
@@ -186,6 +188,7 @@
                         didSelectObject:a_selectedObject
                        deselectedObject:a_deselectedObject
                               indexPath:a_indexPath
+                    deselectedIndexPath:a_deselectedIndexPath
                                userInfo:a_userInfo];
     }
 

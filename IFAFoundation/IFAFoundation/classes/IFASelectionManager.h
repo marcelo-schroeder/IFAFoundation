@@ -160,12 +160,14 @@
 * @param a_selectedObject The selected object, or nil if no object has been selected.
 * @param a_deselectedObject The deselected object, or nil if no object has been deselected.
 * @param a_indexPath The index path associated with the user action if available, otherwise nil.
+* @param a_deselectedIndexPath The index path associated with the deselected object, or nil if no object has been deselected.
 * @param a_userInfo A dictionary optionally provided when <[IFASelectionManager handleSelectionForIndexPath:userInfo:]> was called.
 */
 - (void)selectionManager:(IFASelectionManager *)a_selectionManager
         willSelectObject:(id)a_selectedObject
           deselectObject:(id)a_deselectedObject
                indexPath:(NSIndexPath *)a_indexPath
+     deselectedIndexPath:(NSIndexPath *)a_deselectedIndexPath
                 userInfo:(NSDictionary *)a_userInfo;
 
 /**
@@ -176,12 +178,14 @@
 * @param a_selectedObject The selected object, or nil if no object has been selected.
 * @param a_deselectedObject The deselected object, or nil if no object has been deselected.
 * @param a_indexPath The index path associated with the user action if available, otherwise nil.
+* @param a_deselectedIndexPath The index path associated with the deselected object, or nil if no object has been deselected.
 * @param a_userInfo A dictionary optionally provided when <[IFASelectionManager handleSelectionForIndexPath:userInfo:]> was called.
 */
 - (void)selectionManager:(IFASelectionManager *)a_selectionManager
          didSelectObject:(id)a_selectedObject
         deselectedObject:(id)a_deselectedObject
                indexPath:(NSIndexPath *)a_indexPath
+     deselectedIndexPath:(NSIndexPath *)a_deselectedIndexPath
                 userInfo:(NSDictionary *)a_userInfo;
 
 @end
